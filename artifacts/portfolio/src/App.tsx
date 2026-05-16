@@ -145,9 +145,9 @@ function Home() {
           {PORTFOLIO_ITEMS.map((item) => (
             <div key={item.id} className="group cursor-pointer flex flex-col gap-4">
               {/* Media Container */}
-              <div className="relative aspect-video w-full bg-[#111] overflow-hidden transition-opacity duration-300 group-hover:opacity-90">
+              <div className="relative aspect-video w-full bg-[#111] overflow-hidden">
                 {item.type === "video" ? (
-                  <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="absolute inset-0 flex items-center justify-center transition-opacity duration-300 group-hover:opacity-90">
                     <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center backdrop-blur-sm border border-white/10">
                       <Play className="w-5 h-5 text-white ml-1" fill="currentColor" />
                     </div>
@@ -156,7 +156,7 @@ function Home() {
                   <img 
                     src={item.src} 
                     alt={item.title} 
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-110"
                     loading="lazy"
                   />
                 )}
