@@ -6,15 +6,16 @@ import { Play, ChevronDown } from "lucide-react";
 import NotFound from "@/pages/not-found";
 import agendaListImg from "@assets/image_1778950180883.png";
 import lumaHeroImg from "@assets/image_1778950587552.png";
+import chessKidsImg from "@assets/image_1778951451354.png";
 
 const queryClient = new QueryClient();
 
 const PORTFOLIO_ITEMS = [
   {
     id: 1,
-    title: "Dark mode designs - Agenda list",
+    title: "Dashboard - Chess Kids Game",
     type: "image",
-    src: agendaListImg,
+    src: chessKidsImg,
   },
   {
     id: 2,
