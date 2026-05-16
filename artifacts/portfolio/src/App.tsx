@@ -5,6 +5,7 @@ import { SiX } from "react-icons/si";
 import { Play, ChevronDown } from "lucide-react";
 import NotFound from "@/pages/not-found";
 import agendaListImg from "@assets/image_1778950180883.png";
+import lumaHeroImg from "@assets/image_1778950587552.png";
 
 const queryClient = new QueryClient();
 
@@ -17,8 +18,10 @@ const PORTFOLIO_ITEMS = [
   },
   {
     id: 2,
-    title: "Accordion - UI Interaction",
-    type: "video",
+    title: "Hero Design - Luma AI",
+    type: "image",
+    src: lumaHeroImg,
+    category: "Website design",
   },
   {
     id: 3,
@@ -161,7 +164,7 @@ function Home() {
               {/* Info */}
               <div className="space-y-1">
                 <h3 className="text-[15px] font-medium text-white tracking-tight">{item.title}</h3>
-                <p className="text-[14px] text-muted-foreground tracking-tight">Product Design</p>
+                <p className="text-[14px] text-muted-foreground tracking-tight">{item.category ?? "Product Design"}</p>
               </div>
             </div>
           ))}
