@@ -4,14 +4,16 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { SiX } from "react-icons/si";
 import { Play, ChevronDown } from "lucide-react";
 import NotFound from "@/pages/not-found";
+import agendaListImg from "@assets/image_1778950180883.png";
 
 const queryClient = new QueryClient();
 
 const PORTFOLIO_ITEMS = [
   {
     id: 1,
-    title: "Dark Mode Designs - Showreel",
-    type: "video",
+    title: "Dark mode designs - Agenda list",
+    type: "image",
+    src: agendaListImg,
   },
   {
     id: 2,
