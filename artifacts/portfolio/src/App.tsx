@@ -84,15 +84,15 @@ function Home() {
         <div className="space-y-12">
           {/* Header */}
           <div>
-            <h1 className="text-[22px] font-medium leading-tight text-white tracking-tight">Murat Alpay</h1>
-            <p className="text-[15px] text-muted-foreground mt-1 tracking-tight">Product Designer, Freelance</p>
+            <h1 className="text-[22px] font-medium leading-tight text-white tracking-tight">Miracle Eseurhobo</h1>
+            <p className="text-[15px] text-muted-foreground mt-1 tracking-tight">UX Designer & Framer Developer</p>
           </div>
 
           {/* Intro section */}
           <section className="space-y-3">
             <h2 className="text-[15px] font-medium text-white tracking-tight">Me in 10 seconds.</h2>
             <p className="text-[15px] text-muted-foreground leading-relaxed tracking-tight">
-              Nice to meet you, I'm Murat. I'm a product designer who loves bridging design and development. Lately, I've been spending a lot of time with vibe coding tools, converting my Figma designs into code.
+              I'm Miracle Eseurhobo, a UX designer and Framer developer. I help startups launch polished, conversion-ready products in an agile manner.
             </p>
           </section>
 
@@ -101,7 +101,7 @@ function Home() {
             <h2 className="text-[15px] font-medium text-white tracking-tight">What's your background?</h2>
             <div className="space-y-4">
               <p className="text-[15px] text-muted-foreground leading-relaxed tracking-tight">
-                I've been working as a product designer since 2015 - basically deciding the look and feel of products. I had a pretty good career, but I decided that I no longer want to work just for money or climb the career ladder. That's why I only work as a freelancer on projects that interest me.
+                I focus on simplifying complex flows, building systems that scale, and designing experiences that turn early users into advocates.
               </p>
               <p className="text-[15px] text-muted-foreground leading-relaxed tracking-tight">
                 Currently open to new opportunities. Feel free to reach out if you'd like to collaborate or just say hello.
