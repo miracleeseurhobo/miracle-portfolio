@@ -8,7 +8,7 @@ import NotFound from "@/pages/not-found";
 import agendaListImg from "@assets/image_1778950180883.png";
 import lumaHeroImg from "@assets/image_1778950587552.png";
 import chessKidsImg from "@assets/image_1778951451354.png";
-import p2pTradingLottie from "@assets/Frame-48095820-Bold_(1)_1779030338002.json";
+import p2pTradingLottie from "@assets/Frame-48095820-Bold_(2)_1779031345964.json";
 
 const queryClient = new QueryClient();
 
