@@ -29,7 +29,7 @@ const PORTFOLIO_ITEMS = [
   },
   {
     id: 3,
-    title: "P2P Trading Platform",
+    title: "Nike App Re-imagined",
     type: "mp4",
     src: p2pTradingVideo,
     category: "Mobile App",
