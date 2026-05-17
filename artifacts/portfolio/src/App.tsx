@@ -8,7 +8,7 @@ import NotFound from "@/pages/not-found";
 import agendaListImg from "@assets/image_1778950180883.png";
 import lumaHeroVideo from "@assets/Luma.ai_(1)_1779033745783.mp4";
 import chessKidsImg from "@assets/image_1778951451354.png";
-import p2pTradingVideo from "@assets/miracle's_video_1779032607960.mp4";
+import p2pTradingVideo from "@assets/Frame-48095820-Cinematic_(1)_1779060505063.mp4";
 
 const queryClient = new QueryClient();
 
