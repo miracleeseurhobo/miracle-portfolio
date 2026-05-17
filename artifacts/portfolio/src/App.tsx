@@ -3,10 +3,12 @@ import { Switch, Route, Router as WouterRouter } from "wouter";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { SiX } from "react-icons/si";
 import { Play, ChevronDown } from "lucide-react";
+import Lottie from "lottie-react";
 import NotFound from "@/pages/not-found";
 import agendaListImg from "@assets/image_1778950180883.png";
 import lumaHeroImg from "@assets/image_1778950587552.png";
 import chessKidsImg from "@assets/image_1778951451354.png";
+import p2pTradingLottie from "@assets/Frame-48095820-Bold_1779029710857.json";
 
 const queryClient = new QueryClient();
 
@@ -26,8 +28,10 @@ const PORTFOLIO_ITEMS = [
   },
   {
     id: 3,
-    title: "Delete Button - UI Interaction",
-    type: "video",
+    title: "P2P Trading Platform",
+    type: "lottie",
+    src: p2pTradingLottie,
+    category: "Mobile App",
   },
   {
     id: 4,
@@ -151,6 +155,16 @@ function Home() {
                     <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center backdrop-blur-sm border border-white/10">
                       <Play className="w-5 h-5 text-white ml-1" fill="currentColor" />
                     </div>
+                  </div>
+                ) : item.type === "lottie" ? (
+                  <div className="absolute inset-0 flex items-center justify-center transition-transform duration-500 ease-out group-hover:scale-110">
+                    <Lottie
+                      animationData={item.src}
+                      loop
+                      autoplay
+                      className="w-full h-full"
+                      rendererSettings={{ preserveAspectRatio: "xMidYMid slice" }}
+                    />
                   </div>
                 ) : (
                   <img 
