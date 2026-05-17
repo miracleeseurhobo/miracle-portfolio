@@ -157,16 +157,14 @@ function Home() {
                     </div>
                   </div>
                 ) : item.type === "lottie" ? (
-                  <div className="absolute inset-0 overflow-hidden">
-                    <div className="absolute inset-0 scale-[1.18] origin-center transition-transform duration-500 ease-out group-hover:scale-[1.28]">
-                      <Lottie
-                        animationData={item.src}
-                        loop
-                        autoplay
-                        className="w-full h-full"
-                        rendererSettings={{ preserveAspectRatio: "xMidYMid slice" }}
-                      />
-                    </div>
+                  <div className="absolute inset-0 flex items-center justify-center transition-transform duration-500 ease-out group-hover:scale-110">
+                    <Lottie
+                      animationData={item.src}
+                      loop
+                      autoplay
+                      className="w-full h-full"
+                      rendererSettings={{ preserveAspectRatio: "xMidYMid meet" }}
+                    />
                   </div>
                 ) : (
                   <img 
