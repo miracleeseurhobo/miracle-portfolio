@@ -6,7 +6,7 @@ import { Play, ChevronDown } from "lucide-react";
 import Lottie from "lottie-react";
 import NotFound from "@/pages/not-found";
 import agendaListImg from "@assets/image_1778950180883.png";
-import lumaHeroImg from "@assets/image_1778950587552.png";
+import lumaHeroVideo from "@assets/Luma.ai_(1)_1779033745783.mp4";
 import chessKidsImg from "@assets/image_1778951451354.png";
 import p2pTradingVideo from "@assets/miracle's_video_1779032607960.mp4";
 
@@ -22,8 +22,8 @@ const PORTFOLIO_ITEMS = [
   {
     id: 2,
     title: "Hero Design - Luma AI",
-    type: "image",
-    src: lumaHeroImg,
+    type: "mp4",
+    src: lumaHeroVideo,
     category: "Website design",
   },
   {
