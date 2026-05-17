@@ -8,6 +8,7 @@ import NotFound from "@/pages/not-found";
 import agendaListImg from "@assets/image_1778950180883.png";
 import lumaHeroVideo from "@assets/Luma.ai_(1)_1779033745783.mp4";
 import chessKidsImg from "@assets/image_1778951451354.png";
+import quelyHeroImg from "@assets/image_1779061008192.png";
 import p2pTradingVideo from "@assets/Frame-48095820-Cinematic_(2)_1779060666396.mp4";
 
 const queryClient = new QueryClient();
@@ -35,8 +36,10 @@ const PORTFOLIO_ITEMS = [
   },
   {
     id: 4,
-    title: "Prompt Chat Component - UI Interaction",
-    type: "video",
+    title: "Landing Page Hero - Quely",
+    type: "image",
+    src: quelyHeroImg,
+    category: "Website Design",
   },
   {
     id: 5,
