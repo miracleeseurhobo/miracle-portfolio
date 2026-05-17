@@ -125,7 +125,7 @@ function Home() {
           <h2 className="text-[15px] font-medium text-white mb-4 tracking-tight">Contact</h2>
           <div className="flex items-center gap-6">
             <a 
-              href="https://x.com/imuratalpay" 
+              href="https://x.com/Rizdsgns" 
               target="_blank" 
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-white transition-colors duration-200"
@@ -134,7 +134,7 @@ function Home() {
               <SiX className="w-4 h-4" />
             </a>
             <a 
-              href="mailto:hello@muratalpay.me"
+              href="mailto:miracleeseurhobo@gmail.com"
               className="text-[15px] text-muted-foreground hover:text-white transition-colors duration-200 tracking-tight"
             >
               Email
