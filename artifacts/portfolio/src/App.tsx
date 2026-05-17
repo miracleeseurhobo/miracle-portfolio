@@ -8,7 +8,7 @@ import NotFound from "@/pages/not-found";
 import agendaListImg from "@assets/image_1778950180883.png";
 import lumaHeroImg from "@assets/image_1778950587552.png";
 import chessKidsImg from "@assets/image_1778951451354.png";
-import p2pTradingLottie from "@assets/Frame-48095820-Bold_(2)_1779031345964.json";
+import p2pTradingVideo from "@assets/miracle's_video_1779032607960.mp4";
 
 const queryClient = new QueryClient();
 
@@ -29,8 +29,8 @@ const PORTFOLIO_ITEMS = [
   {
     id: 3,
     title: "P2P Trading Platform",
-    type: "lottie",
-    src: p2pTradingLottie,
+    type: "mp4",
+    src: p2pTradingVideo,
     category: "Mobile App",
   },
   {
@@ -156,16 +156,16 @@ function Home() {
                       <Play className="w-5 h-5 text-white ml-1" fill="currentColor" />
                     </div>
                   </div>
-                ) : item.type === "lottie" ? (
-                  <div className="absolute inset-0 flex items-center justify-center transition-transform duration-500 ease-out group-hover:scale-110">
-                    <Lottie
-                      animationData={item.src}
-                      loop
-                      autoplay
-                      className="w-full h-full"
-                      rendererSettings={{ preserveAspectRatio: "xMidYMid meet" }}
-                    />
-                  </div>
+                ) : item.type === "mp4" ? (
+                  <video
+                    src={item.src}
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    preload="auto"
+                    className="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-110"
+                  />
                 ) : (
                   <img 
                     src={item.src} 
