@@ -8,7 +8,7 @@ import NotFound from "@/pages/not-found";
 import agendaListImg from "@assets/image_1778950180883.png";
 import lumaHeroImg from "@assets/image_1778950587552.png";
 import chessKidsImg from "@assets/image_1778951451354.png";
-import p2pTradingLottie from "@assets/Frame-48095820-Bold_1779029710857.json";
+import p2pTradingLottie from "@assets/Frame-48095820-Bold_(1)_1779030338002.json";
 
 const queryClient = new QueryClient();
 
@@ -157,14 +157,16 @@ function Home() {
                     </div>
                   </div>
                 ) : item.type === "lottie" ? (
-                  <div className="absolute inset-0 flex items-center justify-center transition-transform duration-500 ease-out group-hover:scale-110">
-                    <Lottie
-                      animationData={item.src}
-                      loop
-                      autoplay
-                      className="w-full h-full"
-                      rendererSettings={{ preserveAspectRatio: "xMidYMid slice" }}
-                    />
+                  <div className="absolute inset-0 overflow-hidden">
+                    <div className="absolute inset-0 scale-[1.18] origin-center transition-transform duration-500 ease-out group-hover:scale-[1.28]">
+                      <Lottie
+                        animationData={item.src}
+                        loop
+                        autoplay
+                        className="w-full h-full"
+                        rendererSettings={{ preserveAspectRatio: "xMidYMid slice" }}
+                      />
+                    </div>
                   </div>
                 ) : (
                   <img 
