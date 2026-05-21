@@ -3,13 +3,12 @@ import { Switch, Route, Router as WouterRouter } from "wouter";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { SiX } from "react-icons/si";
 import { Play, ChevronDown } from "lucide-react";
-import Lottie from "lottie-react";
 import NotFound from "@/pages/not-found";
-import agendaListImg from "@assets/image_1778950180883.png";
-import lumaHeroVideo from "@assets/Luma.ai_(1)_1779033745783.mp4";
-import chessKidsImg from "@assets/image_1778951451354.png";
-import bitechVideo from "@assets/Rotate-movie_full_1779062029618.mov";
-import p2pTradingVideo from "@assets/Frame-48095820-Cinematic_(2)_1779060666396.mp4";
+const ASSET = (path: string) => `${import.meta.env.BASE_URL}${path}`;
+const chessKidsImg = ASSET("media/chess.jpg");
+const lumaHeroVideo = ASSET("media/luma.mp4");
+const p2pTradingVideo = ASSET("media/nike.mp4");
+const bitechVideo = ASSET("media/bitech.mp4");
 
 const queryClient = new QueryClient();
 
@@ -166,7 +165,7 @@ function Home() {
                     loop
                     muted
                     playsInline
-                    preload="auto"
+                    preload="metadata"
                     className="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-110"
                   />
                 ) : (
