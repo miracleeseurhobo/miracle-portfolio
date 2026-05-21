@@ -1,13 +1,18 @@
 import { motion } from "framer-motion";
-import { SECTION_DEFS, type SectionId } from "@/lib/case-study";
+import type { SectionId } from "@/lib/case-study";
+
+type Section = { id: SectionId; label: string };
 
 type Props = {
+  sections: readonly Section[];
   activeId: SectionId | null;
   progress: number;
   onJump: (id: SectionId) => void;
 };
 
-export function StickyNavigation({ activeId, progress, onJump }: Props) {
+export function StickyNavigation({ sections, activeId, progress, onJump }: Props) {
+  if (sections.length === 0) return null;
+
   return (
     <aside className="hidden lg:block w-56 shrink-0">
       <div className="sticky top-24">
@@ -22,7 +27,7 @@ export function StickyNavigation({ activeId, progress, onJump }: Props) {
             aria-hidden
           />
           <ul className="space-y-1">
-            {SECTION_DEFS.map((section) => {
+            {sections.map((section) => {
               const isActive = activeId === section.id;
               return (
                 <li key={section.id}>
