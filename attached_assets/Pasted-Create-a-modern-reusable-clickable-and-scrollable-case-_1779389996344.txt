@@ -1,0 +1,87 @@
+Create a modern, reusable, clickable, and scrollable case study content component inspired by the interaction quality and editorial layout style of [https://muratalpay.me/](https://muratalpay.me/).
+
+Requirements:
+
+* Build in React + Tailwind.
+* The component should feel premium, minimal, and highly interactive.
+* The layout should support long-form case study storytelling.
+* Make the content area reusable through props/data objects.
+* Include smooth scrolling behavior and subtle hover animations.
+* The content area should support:
+
+  * Hero section
+  * Overview
+  * Problem
+  * Process
+  * Research
+  * Design explorations
+  * Final solution
+  * Outcomes/results
+  * Quote/testimonial
+  * Image placeholders
+  * Video placeholders
+  * Metrics/stat placeholders
+  * Sticky side navigation
+  * Section progress indicator
+  * Expandable/collapsible sections
+  * Horizontal scrolling galleries
+  * Full-width breakout sections
+  * Dark/light adaptive styling
+
+Interaction Requirements:
+
+* Sticky table of contents that highlights the active section while scrolling.
+* Clicking navigation items should smoothly scroll to sections.
+* Sections animate into view as users scroll.
+* Add subtle parallax movement to hero visuals.
+* Include hover interactions for cards and media blocks.
+* Make image and media placeholders clickable.
+* Include keyboard accessibility support.
+
+Reusable Content Structure:
+Create a JSON-driven structure like:
+
+```js
+const caseStudy = {
+  title: "",
+  subtitle: "",
+  heroImage: "",
+  overview: "",
+  problem: "",
+  process: [],
+  research: [],
+  explorations: [],
+  solution: "",
+  outcomes: [],
+  metrics: [],
+  testimonial: {},
+  gallery: []
+}
+```
+
+Design Direction:
+
+* Minimal typography-focused layout.
+* Large spacing and editorial rhythm.
+* Soft gradients and glassmorphism accents.
+* Smooth transitions and motion.
+* Inspired by high-end portfolio/case study experiences.
+* Mobile responsive with adaptive sticky navigation.
+
+Technical Requirements:
+
+* Use Framer Motion for animations.
+* Use Intersection Observer for active section tracking.
+* Use reusable components:
+
+  * `CaseStudyLayout`
+  * `SectionBlock`
+  * `StickyNavigation`
+  * `MediaGallery`
+  * `MetricsGrid`
+  * `QuoteBlock`
+* Add placeholder content and images.
+* Ensure the experience is fully scrollable and interactive inside the content area.
+* Keep the code modular and production-ready.
+
+Add realistic placeholder UX case study content for a fictional product redesign project.

@@ -1,9 +1,10 @@
 import React from "react";
-import { Switch, Route, Router as WouterRouter } from "wouter";
+import { Switch, Route, Router as WouterRouter, Link } from "wouter";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { SiX } from "react-icons/si";
 import { Play, ChevronDown } from "lucide-react";
 import NotFound from "@/pages/not-found";
+import CaseStudyPage from "@/pages/case-study";
 const ASSET = (path: string) => `${import.meta.env.BASE_URL}${path}`;
 const chessKidsImg = ASSET("media/chess.jpg");
 const lumaHeroVideo = ASSET("media/luma.mp4");
@@ -149,7 +150,11 @@ function Home() {
       <div className="w-full md:w-[60%] lg:w-[65%] xl:w-[70%] p-6 md:p-12 lg:p-20 md:min-h-screen">
         <div className="grid grid-cols-1 xl:grid-cols-2 gap-8 md:gap-12">
           {PORTFOLIO_ITEMS.map((item) => (
-            <div key={item.id} className="group cursor-pointer flex flex-col gap-4">
+            <Link
+              key={item.id}
+              href={`/case-study/${item.id}`}
+              className="group cursor-pointer flex flex-col gap-4 focus:outline-none focus-visible:ring-1 focus-visible:ring-white/40"
+            >
               {/* Media Container */}
               <div className="relative aspect-video w-full bg-[#111] overflow-hidden">
                 {item.type === "video" ? (
@@ -183,7 +188,7 @@ function Home() {
                 <h3 className="text-[15px] font-medium text-white tracking-tight">{item.title}</h3>
                 <p className="text-[14px] text-muted-foreground tracking-tight">{item.category ?? "Product Design"}</p>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>
@@ -200,6 +205,7 @@ function Router() {
   return (
     <Switch>
       <Route path="/" component={Home} />
+      <Route path="/case-study/:slug" component={CaseStudyPage} />
       <Route component={NotFound} />
     </Switch>
   );
