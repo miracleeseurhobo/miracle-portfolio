@@ -49,6 +49,7 @@ export type CaseStudy = {
   duration?: string;
   heroImage: string;
   heroVideo?: string;
+  behanceEmbedUrl?: string;
   overview: string;
   problem: string;
   process: ProcessStep[];
@@ -87,6 +88,7 @@ export const SAMPLE_CASE_STUDY: CaseStudy = {
   duration: "12 weeks",
   heroImage: "/media/chess.jpg",
   heroVideo: "/media/bitech.mp4",
+  behanceEmbedUrl: "https://www.behance.net/embed/project/229327427?ilo0=1",
   overview:
     "Bitech is a peer-to-peer crypto and giftcard exchange serving 200k+ users across West Africa. The team wanted to lift conversion on the trading flow without sacrificing the trust that long-term users had built with the brand. I led the end-to-end redesign of the home, wallet, and P2P trading surfaces.",
   problem:

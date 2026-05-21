@@ -182,6 +182,39 @@ export function CaseStudyLayout({ caseStudy }: Props) {
         <StickyNavigation activeId={activeId} progress={progress} onJump={jumpTo} />
 
         <article className="flex-1 min-w-0">
+          {caseStudy.behanceEmbedUrl && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+              className="mb-12 md:mb-20"
+            >
+              <p className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground mb-4">
+                Behance preview
+              </p>
+              <div className="relative w-full aspect-[404/316] max-w-2xl bg-[#111] overflow-hidden border border-white/5">
+                <iframe
+                  src={caseStudy.behanceEmbedUrl}
+                  title="Behance project preview"
+                  loading="lazy"
+                  allowFullScreen
+                  allow="clipboard-write"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  className="absolute inset-0 w-full h-full"
+                />
+              </div>
+              <a
+                href={caseStudy.behanceEmbedUrl.replace("/embed/project/", "/gallery/")}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block mt-4 text-[13px] text-muted-foreground hover:text-white transition-colors tracking-tight border-b border-white/20 hover:border-white pb-0.5"
+              >
+                View full project on Behance →
+              </a>
+            </motion.div>
+          )}
+
           <SectionBlock id="overview" eyebrow="01" title="Overview">
             <p className="text-[17px] md:text-[19px] leading-relaxed text-muted-foreground tracking-tight max-w-2xl">
               {caseStudy.overview}
