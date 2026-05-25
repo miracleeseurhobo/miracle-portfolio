@@ -1,0 +1,83 @@
+Create a cinematic fullscreen “project preview layer” that opens when clicking a project card in a portfolio gallery. The interaction should feel premium, minimal, and motion-driven like a modern design showcase.
+
+Requirements:
+
+* Clicking a gallery/project card should smoothly expand into a fullscreen overlay layer.
+* Background outside the content should fade to near-black (#000 with ~85–92% opacity).
+* Center the preview content inside a large rounded container with subtle shadow and soft elevation.
+* Animate the transition using Framer Motion:
+
+  * Use shared layout animation from the grid item into the modal.
+  * Fade + slight scale-in for content.
+  * Smooth spring easing.
+* Add a floating circular close button in the top-left corner of the viewport.
+* Add minimal navigation controls in the top-right (previous / next project arrows).
+* The modal content should support:
+
+  * Autoplay muted looping video preview
+  * Large project title
+  * Small category label
+  * Short description
+  * Optional metadata/footer
+* Video container should feel like a “portfolio presentation stage”:
+
+  * Large centered aspect-ratio box
+  * Rounded corners (20–28px)
+  * Black video frame/background
+  * Ambient shadow/glow
+* UI style:
+
+  * Minimal Swiss-inspired layout
+  * Plenty of negative space
+  * Thin typography
+  * High-end interaction design similar to:
+
+    * Linear
+    * Rauno
+    * Apple motion studies
+    * Framer templates
+* Add hover states for gallery cards:
+
+  * Slight scale
+  * Soft glow
+  * Cursor hint
+* Add ESC key support to close modal.
+* Lock body scroll while modal is open.
+* Make everything responsive and smooth on mobile + desktop.
+
+Tech stack:
+
+* React
+* TailwindCSS
+* Framer Motion
+
+Structure:
+
+* `PortfolioGrid`
+* `ProjectCard`
+* `ProjectPreviewModal`
+
+Animation details:
+
+* Use AnimatePresence.
+* Use `layoutId` for shared element transitions.
+* Overlay should blur the background slightly (`backdrop-blur`).
+* Modal open duration around 0.45–0.6s.
+* Use cubic-bezier or spring transitions for premium feel.
+
+Visual inspiration:
+The preview layer should resemble the attached reference:
+
+* Dark fullscreen cinematic overlay
+* Large centered media presentation
+* Minimal floating controls
+* Elegant motion-first interaction
+* Quiet luxury aesthetic
+
+Also include:
+
+* Sample mock project data
+* Responsive grid layout
+* Clean component architecture
+* Production-quality motion polish
+* Accessibility considerations (focus trap, aria labels, keyboard close)
