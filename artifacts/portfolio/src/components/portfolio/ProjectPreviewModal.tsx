@@ -192,7 +192,7 @@ export function ProjectPreviewModal({
           </div>
 
           {/* Stage */}
-          <div className="relative z-10 w-full h-full flex flex-col items-center justify-center px-5 md:px-12 pt-20 pb-12 md:pb-16">
+          <div className="relative z-10 w-full h-full flex flex-col items-center justify-center px-4 md:px-8 pt-20 pb-8 md:pb-10">
             {/* Shared-layout shell — only animates from the opener card on open/close.
                 Intra-modal nav swaps inner media with a keyed fade, no layoutId churn. */}
             <motion.div
@@ -201,7 +201,7 @@ export function ProjectPreviewModal({
               initial={{ opacity: 0, scale: 0.98 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.98 }}
-              className="relative w-full max-w-[1180px] aspect-video bg-[#0d0d0d] rounded-[20px] md:rounded-[26px] overflow-hidden shadow-[0_40px_120px_-20px_rgba(0,0,0,0.8),0_0_80px_-30px_rgba(255,255,255,0.08)] ring-1 ring-white/5"
+              className="relative w-full max-w-[1680px] aspect-video bg-[#0d0d0d] rounded-[20px] md:rounded-[28px] overflow-hidden shadow-[0_60px_160px_-30px_rgba(0,0,0,0.9),0_0_120px_-30px_rgba(255,255,255,0.1)] ring-1 ring-white/5"
             >
               <AnimatePresence mode="wait" initial={false}>
                 <motion.div
@@ -243,26 +243,26 @@ export function ProjectPreviewModal({
             <AnimatePresence mode="wait">
               <motion.div
                 key={item.id + "-meta"}
-                className="mt-6 md:mt-8 w-full max-w-[1180px] flex flex-col md:flex-row md:items-end md:justify-between gap-4"
+                className="mt-5 md:mt-6 w-full max-w-[1680px] flex flex-col md:flex-row md:items-end md:justify-between gap-3"
                 initial={{ opacity: 0, y: 12 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: 8 }}
                 transition={{ duration: 0.4, delay: 0.15, ease: EASE }}
               >
                 <div className="max-w-xl">
-                  <p className="text-[11px] uppercase tracking-[0.2em] text-white/40 mb-2">
+                  <p className="text-[10px] uppercase tracking-[0.2em] text-white/40 mb-1.5">
                     {item.category ?? "Product Design"}
                   </p>
-                  <h2 className="text-[22px] md:text-[28px] font-medium text-white tracking-tight leading-tight">
+                  <h2 className="text-[16px] md:text-[18px] font-medium text-white tracking-tight leading-tight">
                     {item.title}
                   </h2>
                   {item.description && (
-                    <p className="mt-3 text-[14px] md:text-[15px] text-white/60 leading-relaxed tracking-tight">
+                    <p className="mt-2 text-[13px] text-white/55 leading-relaxed tracking-tight">
                       {item.description}
                     </p>
                   )}
                 </div>
-                <div className="text-[12px] text-white/40 tracking-tight">
+                <div className="text-[11px] text-white/40 tracking-tight">
                   {item.year ?? "2025"} ·{" "}
                   {items.findIndex((i) => i.id === item.id) + 1} /{" "}
                   {items.length}
