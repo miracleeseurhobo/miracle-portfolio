@@ -126,7 +126,7 @@ export function ProjectPreviewModal({
             type="button"
             aria-label="Close preview"
             onClick={onClose}
-            className="absolute inset-0 bg-black/90 backdrop-blur-md cursor-default"
+            className="absolute inset-0 bg-black cursor-default"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -140,7 +140,7 @@ export function ProjectPreviewModal({
               type="button"
               onClick={onClose}
               aria-label="Close"
-              className="pointer-events-auto w-10 h-10 rounded-full bg-white/[0.06] hover:bg-white/[0.12] border border-white/10 flex items-center justify-center text-white/80 hover:text-white transition-colors focus:outline-none focus-visible:ring-1 focus-visible:ring-white/40"
+              className="pointer-events-auto w-10 h-10 rounded-full bg-white hover:bg-white/90 flex items-center justify-center text-black transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-white/60"
               initial={{ opacity: 0, y: -8 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -8 }}
@@ -176,7 +176,7 @@ export function ProjectPreviewModal({
                 type="button"
                 onClick={goPrev}
                 aria-label="Previous project"
-                className="w-10 h-10 rounded-full bg-white/[0.06] hover:bg-white/[0.12] border border-white/10 flex items-center justify-center text-white/80 hover:text-white transition-colors focus:outline-none focus-visible:ring-1 focus-visible:ring-white/40"
+                className="w-10 h-10 rounded-full bg-white hover:bg-white/90 flex items-center justify-center text-black transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-white/60"
               >
                 <ArrowLeft className="w-4 h-4" />
               </button>
@@ -184,7 +184,7 @@ export function ProjectPreviewModal({
                 type="button"
                 onClick={goNext}
                 aria-label="Next project"
-                className="w-10 h-10 rounded-full bg-white/[0.06] hover:bg-white/[0.12] border border-white/10 flex items-center justify-center text-white/80 hover:text-white transition-colors focus:outline-none focus-visible:ring-1 focus-visible:ring-white/40"
+                className="w-10 h-10 rounded-full bg-white hover:bg-white/90 flex items-center justify-center text-black transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-white/60"
               >
                 <ArrowRight className="w-4 h-4" />
               </button>
