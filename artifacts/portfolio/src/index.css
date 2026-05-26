@@ -199,106 +199,65 @@
     .animate-marquee { animation: none; }
   }
 
-  /* Coffee chat button (adapted from Uiverse.io by marcelodolza) */
+  /* Coffee chat button (adapted from Uiverse.io by mi-series) */
   .coffee-button {
-    --white: #ffe7ff;
-    --bg: #080808;
-    --radius: 100px;
-    outline: none;
-    cursor: pointer;
+    outline: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    background: #40B3A2;
+    min-width: 200px;
     border: 0;
-    position: relative;
-    display: inline-block;
-    border-radius: var(--radius);
-    background-color: var(--bg);
-    transition: all 0.2s ease;
-    box-shadow:
-      inset 0 0.3rem 0.9rem rgba(255, 255, 255, 0.3),
-      inset 0 -0.1rem 0.3rem rgba(0, 0, 0, 0.7),
-      inset 0 -0.4rem 0.9rem rgba(255, 255, 255, 0.5),
-      0 3rem 3rem rgba(0, 0, 0, 0.3),
-      0 1rem 1rem -0.6rem rgba(0, 0, 0, 0.8);
+    border-radius: 4px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    padding: 16px 20px;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    overflow: hidden;
+    cursor: pointer;
     text-decoration: none;
   }
-  .coffee-button .wrap {
-    font-size: 25px;
-    font-weight: 500;
-    color: rgba(255, 255, 255, 0.7);
-    padding: 32px 45px;
-    border-radius: inherit;
-    position: relative;
-    overflow: hidden;
-    letter-spacing: -0.01em;
-  }
-  .coffee-button .wrap p {
-    display: flex;
+  .coffee-button:hover { opacity: 0.95; }
+  .coffee-button .coffee-label {
+    display: inline-flex;
     align-items: center;
-    gap: 12px;
-    margin: 0;
-    transition: all 0.2s ease;
-    transform: translateY(2%);
-    mask-image: linear-gradient(to bottom, white 40%, transparent);
-    -webkit-mask-image: linear-gradient(to bottom, white 40%, transparent);
-  }
-  .coffee-button .wrap p span:nth-child(2) { display: none; }
-  .coffee-button:hover .wrap p span:nth-child(1) { display: none; }
-  .coffee-button:hover .wrap p span:nth-child(2) { display: inline-block; }
-
-  .coffee-button .wrap::before,
-  .coffee-button .wrap::after {
-    content: "";
-    position: absolute;
-    transition: all 0.3s ease;
-    pointer-events: none;
-  }
-  .coffee-button .wrap::before {
-    left: -15%;
-    right: -15%;
-    bottom: 25%;
-    top: -100%;
-    border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.12);
-  }
-  .coffee-button .wrap::after {
-    left: 6%;
-    right: 6%;
-    top: 12%;
-    bottom: 40%;
-    border-radius: 22px 22px 0 0;
-    box-shadow: inset 0 10px 8px -10px rgba(255, 255, 255, 0.8);
-    background: linear-gradient(
-      180deg,
-      rgba(255, 255, 255, 0.3) 0%,
-      rgba(0, 0, 0, 0) 50%,
-      rgba(0, 0, 0, 0) 100%
-    );
-  }
-  .coffee-button:hover {
-    box-shadow:
-      inset 0 0.3rem 0.5rem rgba(255, 255, 255, 0.4),
-      inset 0 -0.1rem 0.3rem rgba(0, 0, 0, 0.7),
-      inset 0 -0.4rem 0.9rem rgba(255, 255, 255, 0.7),
-      0 3rem 3rem rgba(0, 0, 0, 0.3),
-      0 1rem 1rem -0.6rem rgba(0, 0, 0, 0.8);
-  }
-  .coffee-button:hover .wrap::before { transform: translateY(-5%); }
-  .coffee-button:hover .wrap::after {
-    opacity: 0.4;
-    transform: translateY(5%);
-  }
-  .coffee-button:hover .wrap p { transform: translateY(-4%); }
-  .coffee-button:active {
-    transform: translateY(4px);
-    box-shadow:
-      inset 0 0.3rem 0.5rem rgba(255, 255, 255, 0.5),
-      inset 0 -0.1rem 0.3rem rgba(0, 0, 0, 0.8),
-      inset 0 -0.4rem 0.9rem rgba(255, 255, 255, 0.4),
-      0 3rem 3rem rgba(0, 0, 0, 0.3),
-      0 1rem 1rem -0.6rem rgba(0, 0, 0, 0.8);
+    gap: 10px;
   }
   .coffee-button .coffee-icon {
-    width: 1.5rem;
-    height: 1.5rem;
+    width: 16px;
+    height: 16px;
     flex-shrink: 0;
+  }
+  .coffee-button .animation {
+    width: 6px;
+    height: 6px;
+    border-radius: 100%;
+    background: rgba(255, 255, 255, 0.6);
+    flex-shrink: 0;
+    animation: coffee-ripple 0.6s linear infinite;
+  }
+  @keyframes coffee-ripple {
+    0% {
+      box-shadow:
+        0 0 0 0 rgba(255, 255, 255, 0.1),
+        0 0 0 10px rgba(255, 255, 255, 0.1),
+        0 0 0 20px rgba(255, 255, 255, 0.1),
+        0 0 0 30px rgba(255, 255, 255, 0.1);
+    }
+    100% {
+      box-shadow:
+        0 0 0 10px rgba(255, 255, 255, 0.1),
+        0 0 0 20px rgba(255, 255, 255, 0.1),
+        0 0 0 30px rgba(255, 255, 255, 0.1),
+        0 0 0 40px rgba(255, 255, 255, 0);
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .coffee-button .animation { animation: none; }
   }
 }

@@ -128,18 +128,11 @@ function LeftColumn() {
             className="coffee-button"
             aria-label="Book a coffee chat"
           >
-            <div className="wrap">
-              <p>
-                <span>
-                  <Coffee className="coffee-icon" strokeWidth={1.75} aria-hidden />
-                  Coffee chat
-                </span>
-                <span>
-                  <Coffee className="coffee-icon" strokeWidth={1.75} aria-hidden />
-                  Let's brew
-                </span>
-              </p>
-            </div>
+            <span className="coffee-label">
+              <Coffee className="coffee-icon" strokeWidth={2} aria-hidden />
+              Coffee chat
+            </span>
+            <span className="animation" aria-hidden />
           </a>
         </div>
       </section>
