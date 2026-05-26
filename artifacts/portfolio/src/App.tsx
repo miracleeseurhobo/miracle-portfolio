@@ -72,17 +72,17 @@ function LeftColumn() {
 
       {/* Header */}
       <div>
-        <h1 className="text-[32px] md:text-[36px] font-bold leading-[1.05] text-white tracking-[-0.02em]">
+        <h1 className="font-display text-[40px] md:text-[48px] font-semibold leading-[1.0] text-white tracking-[-0.025em]">
           Miracle Eseurhobo
         </h1>
-        <p className="text-[16px] font-medium text-muted-foreground mt-2 tracking-tight">
+        <p className="font-script text-[26px] md:text-[30px] text-muted-foreground mt-2 leading-tight">
           UX Designer & Framer Developer
         </p>
       </div>
 
       {/* About */}
       <section className="space-y-3">
-        <h2 className="text-[18px] font-semibold text-white tracking-tight">
+        <h2 className="font-display text-[22px] font-semibold text-white tracking-tight">
           About me.
         </h2>
         <p className="text-[15px] font-medium text-muted-foreground leading-relaxed tracking-tight">
@@ -162,7 +162,7 @@ function LeftColumn() {
 
       {/* Contact */}
       <div className="mt-auto pt-4">
-        <h2 className="text-[18px] font-semibold text-white mb-4 tracking-tight">
+        <h2 className="font-display text-[22px] font-semibold text-white mb-4 tracking-tight">
           Contact
         </h2>
         <div className="flex items-center gap-6">

@@ -6,7 +6,7 @@ export function ResumeBlock() {
   return (
     <section className="space-y-6">
       <div className="flex items-baseline justify-between">
-        <h2 className="text-[18px] font-semibold text-white tracking-tight">
+        <h2 className="font-display text-[22px] font-semibold text-white tracking-tight">
           Resume
         </h2>
         <span className="text-[12px] font-semibold uppercase tracking-[0.18em] text-muted-foreground">
@@ -15,7 +15,7 @@ export function ResumeBlock() {
       </div>
       <div className="border border-white/[0.08] p-6 md:p-8 flex flex-col md:flex-row md:items-center md:justify-between gap-5">
         <div className="space-y-1.5">
-          <h3 className="text-[20px] md:text-[22px] font-bold text-white tracking-[-0.01em]">
+          <h3 className="font-display text-[22px] md:text-[26px] font-semibold text-white tracking-[-0.015em]">
             Miracle Eseurhobo — CV
           </h3>
           <p className="text-[15px] font-medium text-muted-foreground tracking-tight">

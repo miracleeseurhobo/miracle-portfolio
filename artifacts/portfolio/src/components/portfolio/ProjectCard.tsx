@@ -23,7 +23,7 @@ export function ProjectCard({ item, onOpen }: Props) {
           </div>
         </div>
         <div className="space-y-1">
-          <h3 className="text-[17px] font-semibold text-white/35 tracking-tight">
+          <h3 className="font-display text-[19px] font-semibold text-white/35 tracking-tight">
             Untitled project
           </h3>
           <p className="text-[14px] font-medium text-white/25 tracking-tight">
@@ -72,7 +72,7 @@ export function ProjectCard({ item, onOpen }: Props) {
       </motion.div>
 
       <div className="space-y-1">
-        <h3 className="text-[17px] md:text-[18px] font-semibold text-white tracking-tight">
+        <h3 className="font-display text-[19px] md:text-[20px] font-semibold text-white tracking-tight">
           {item.title}
         </h3>
         <p className="text-[14px] font-medium text-muted-foreground tracking-tight">

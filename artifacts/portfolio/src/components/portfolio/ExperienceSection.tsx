@@ -50,7 +50,7 @@ export function ExperienceSection() {
   return (
     <section className="space-y-8">
       <div className="flex items-baseline justify-between">
-        <h2 className="text-[18px] font-semibold text-white tracking-tight">
+        <h2 className="font-display text-[22px] font-semibold text-white tracking-tight">
           Experience
         </h2>
         <span className="text-[13px] font-medium text-muted-foreground tracking-tight">
@@ -73,7 +73,7 @@ export function ExperienceSection() {
               </p>
             </div>
             <div className="space-y-3">
-              <h3 className="text-[18px] md:text-[20px] font-semibold text-white tracking-tight">
+              <h3 className="font-display text-[20px] md:text-[22px] font-semibold text-white tracking-tight">
                 {r.title}{" "}
                 <span className="text-muted-foreground font-medium">
                   · {r.company}

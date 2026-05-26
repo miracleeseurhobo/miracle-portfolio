@@ -13,7 +13,7 @@ export function LogosStrip() {
   return (
     <section className="space-y-6">
       <div className="flex items-baseline justify-between">
-        <h2 className="text-[18px] font-semibold text-white tracking-tight">
+        <h2 className="font-display text-[22px] font-semibold text-white tracking-tight">
           Brands I've supported
         </h2>
         <span className="text-[13px] font-semibold text-muted-foreground tracking-tight">
