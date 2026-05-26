@@ -62,7 +62,7 @@ function LeftColumn() {
   return (
     <div className="w-full md:w-[40%] lg:w-[35%] xl:w-[30%] p-6 md:p-12 lg:p-20 md:h-screen md:sticky md:top-0 md:overflow-y-auto flex flex-col gap-12 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
       {/* Status pill */}
-      <div className="inline-flex items-center gap-2 self-start text-[13px] font-medium text-white/80 tracking-tight">
+      <div className="inline-flex items-center gap-2 self-start apple-caption text-white/80">
         <span className="relative flex h-1.5 w-1.5">
           <span className="absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75 animate-ping" />
           <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-emerald-400" />
@@ -72,20 +72,20 @@ function LeftColumn() {
 
       {/* Header */}
       <div>
-        <h1 className="font-display text-[40px] md:text-[48px] font-semibold leading-[1.0] text-white tracking-[-0.025em]">
+        <h1 className="apple-headline-2 text-white">
           Miracle Eseurhobo
         </h1>
-        <p className="font-script text-[26px] md:text-[30px] text-muted-foreground mt-2 leading-tight">
+        <p className="apple-intro text-muted-foreground mt-2">
           UX Designer & Framer Developer
         </p>
       </div>
 
       {/* About */}
       <section className="space-y-3">
-        <h2 className="font-display text-[22px] font-semibold text-white tracking-tight">
+        <h2 className="apple-headline-6 text-white">
           About me.
         </h2>
-        <p className="text-[15px] font-medium text-muted-foreground leading-relaxed tracking-tight">
+        <p className="apple-body text-muted-foreground">
           A product and visual designer who's worked on both sides of the
           brief. Fintech products, entertainment brands, pharma campaigns,
           SaaS platforms. The range was never accidental. I show up best when
@@ -95,7 +95,7 @@ function LeftColumn() {
 
       {/* Trusted by */}
       <section className="space-y-4">
-        <h2 className="text-[12px] font-semibold uppercase tracking-[0.2em] text-muted-foreground">
+        <h2 className="apple-eyebrow text-muted-foreground">
           Trusted by
         </h2>
         <div
@@ -162,7 +162,7 @@ function LeftColumn() {
 
       {/* Contact */}
       <div className="mt-auto pt-4">
-        <h2 className="font-display text-[22px] font-semibold text-white mb-4 tracking-tight">
+        <h2 className="apple-headline-6 text-white mb-4">
           Contact
         </h2>
         <div className="flex items-center gap-6">
@@ -177,7 +177,7 @@ function LeftColumn() {
           </a>
           <a
             href="mailto:miracleeseurhobo@gmail.com"
-            className="text-[15px] font-semibold text-muted-foreground hover:text-white transition-colors duration-200 tracking-tight"
+            className="apple-body text-muted-foreground hover:text-white transition-colors duration-200"
           >
             Email
           </a>

@@ -23,10 +23,10 @@ export function ProjectCard({ item, onOpen }: Props) {
           </div>
         </div>
         <div className="space-y-1">
-          <h3 className="font-display text-[19px] font-semibold text-white/35 tracking-tight">
+          <h3 className="apple-headline-6 text-white/35">
             Untitled project
           </h3>
-          <p className="text-[14px] font-medium text-white/25 tracking-tight">
+          <p className="apple-caption text-white/25">
             Placeholder
           </p>
         </div>
@@ -72,10 +72,10 @@ export function ProjectCard({ item, onOpen }: Props) {
       </motion.div>
 
       <div className="space-y-1">
-        <h3 className="font-display text-[19px] md:text-[20px] font-semibold text-white tracking-tight">
+        <h3 className="apple-headline-6 text-white">
           {item.title}
         </h3>
-        <p className="text-[14px] font-medium text-muted-foreground tracking-tight">
+        <p className="apple-caption text-muted-foreground">
           {item.category ?? "Product Design"}
         </p>
       </div>

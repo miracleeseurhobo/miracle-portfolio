@@ -50,10 +50,10 @@ export function ExperienceSection() {
   return (
     <section className="space-y-8">
       <div className="flex items-baseline justify-between">
-        <h2 className="font-display text-[22px] font-semibold text-white tracking-tight">
+        <h2 className="apple-headline-6 text-white">
           Experience
         </h2>
-        <span className="text-[13px] font-medium text-muted-foreground tracking-tight">
+        <span className="apple-caption text-muted-foreground">
           {ROLES.length} roles
         </span>
       </div>
@@ -65,17 +65,17 @@ export function ExperienceSection() {
             className="border-b border-white/[0.06] py-8 grid md:grid-cols-[180px_1fr] gap-4 md:gap-10"
           >
             <div className="space-y-1">
-              <p className="text-[12px] font-semibold uppercase tracking-[0.2em] text-muted-foreground">
+              <p className="apple-eyebrow text-muted-foreground">
                 {r.period}
               </p>
-              <p className="text-[14px] font-medium text-white/70 tracking-tight">
+              <p className="apple-caption text-white/70">
                 {r.company}
               </p>
             </div>
             <div className="space-y-3">
-              <h3 className="font-display text-[20px] md:text-[22px] font-semibold text-white tracking-tight">
+              <h3 className="apple-headline-5 text-white">
                 {r.title}{" "}
-                <span className="text-muted-foreground font-medium">
+                <span className="text-muted-foreground font-normal">
                   · {r.company}
                 </span>
               </h3>
@@ -83,7 +83,7 @@ export function ExperienceSection() {
                 {r.bullets.map((b, i) => (
                   <li
                     key={i}
-                    className="text-[15px] md:text-[16px] font-medium text-muted-foreground leading-relaxed tracking-tight pl-4 relative"
+                    className="apple-body text-muted-foreground pl-4 relative"
                   >
                     <span
                       className="absolute left-0 top-[0.7em] w-1.5 h-px bg-white/40"
@@ -94,8 +94,8 @@ export function ExperienceSection() {
                 ))}
               </ul>
               {r.stack && (
-                <p className="text-[12px] font-semibold uppercase tracking-[0.14em] text-white/45 pt-1">
-                  Stack: <span className="font-medium normal-case tracking-tight text-white/55">{r.stack}</span>
+                <p className="apple-eyebrow text-white/45 pt-1">
+                  Stack: <span className="apple-caption text-white/55 normal-case">{r.stack}</span>
                 </p>
               )}
             </div>

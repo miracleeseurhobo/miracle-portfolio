@@ -6,19 +6,19 @@ export function ResumeBlock() {
   return (
     <section className="space-y-6">
       <div className="flex items-baseline justify-between">
-        <h2 className="font-display text-[22px] font-semibold text-white tracking-tight">
+        <h2 className="apple-headline-6 text-white">
           Resume
         </h2>
-        <span className="text-[12px] font-semibold uppercase tracking-[0.18em] text-muted-foreground">
+        <span className="apple-eyebrow text-muted-foreground">
           PDF
         </span>
       </div>
       <div className="border border-white/[0.08] p-6 md:p-8 flex flex-col md:flex-row md:items-center md:justify-between gap-5">
         <div className="space-y-1.5">
-          <h3 className="font-display text-[22px] md:text-[26px] font-semibold text-white tracking-[-0.015em]">
+          <h3 className="apple-headline-5 text-white">
             Miracle Eseurhobo — CV
           </h3>
-          <p className="text-[15px] font-medium text-muted-foreground tracking-tight">
+          <p className="apple-body text-muted-foreground">
             Full work history, education, and tool stack.
           </p>
         </div>
@@ -27,7 +27,7 @@ export function ResumeBlock() {
             href={CV_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-[15px] font-semibold text-muted-foreground hover:text-white transition-colors tracking-tight border-b-2 border-white/20 hover:border-white pb-1"
+            className="inline-flex items-center gap-2 apple-body text-muted-foreground hover:text-white transition-colors border-b border-white/20 hover:border-white pb-1"
           >
             View
             <ArrowUpRight className="w-4 h-4" />
@@ -35,9 +35,9 @@ export function ResumeBlock() {
           <a
             href={CV_URL}
             download
-            className="inline-flex items-center gap-2 text-[15px] font-bold text-black bg-white hover:bg-white/90 px-5 py-3 tracking-tight transition-colors"
+            className="inline-flex items-center gap-2 apple-body font-semibold text-black bg-white hover:bg-white/90 rounded-full px-5 py-2.5 transition-colors"
           >
-            <Download className="w-4 h-4" strokeWidth={2.5} />
+            <Download className="w-4 h-4" strokeWidth={2.25} />
             Download
           </a>
         </div>
