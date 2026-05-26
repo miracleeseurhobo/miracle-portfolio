@@ -62,7 +62,7 @@ function LeftColumn() {
   return (
     <div className="w-full md:w-[40%] lg:w-[35%] xl:w-[30%] p-6 md:p-12 lg:p-20 md:h-screen md:sticky md:top-0 md:overflow-y-auto flex flex-col gap-12 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
       {/* Status pill */}
-      <div className="inline-flex items-center gap-2 self-start text-[12px] text-white/70 tracking-tight">
+      <div className="inline-flex items-center gap-2 self-start text-[13px] font-medium text-white/80 tracking-tight">
         <span className="relative flex h-1.5 w-1.5">
           <span className="absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75 animate-ping" />
           <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-emerald-400" />
@@ -72,20 +72,20 @@ function LeftColumn() {
 
       {/* Header */}
       <div>
-        <h1 className="text-[22px] font-medium leading-tight text-white tracking-tight">
+        <h1 className="text-[32px] md:text-[36px] font-bold leading-[1.05] text-white tracking-[-0.02em]">
           Miracle Eseurhobo
         </h1>
-        <p className="text-[15px] text-muted-foreground mt-1 tracking-tight">
+        <p className="text-[16px] font-medium text-muted-foreground mt-2 tracking-tight">
           UX Designer & Framer Developer
         </p>
       </div>
 
       {/* About */}
       <section className="space-y-3">
-        <h2 className="text-[15px] font-medium text-white tracking-tight">
+        <h2 className="text-[18px] font-semibold text-white tracking-tight">
           About me.
         </h2>
-        <p className="text-[15px] text-muted-foreground leading-relaxed tracking-tight">
+        <p className="text-[15px] font-medium text-muted-foreground leading-relaxed tracking-tight">
           A product and visual designer who's worked on both sides of the
           brief. Fintech products, entertainment brands, pharma campaigns,
           SaaS platforms. The range was never accidental. I show up best when
@@ -95,7 +95,7 @@ function LeftColumn() {
 
       {/* Trusted by */}
       <section className="space-y-4">
-        <h2 className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground">
+        <h2 className="text-[12px] font-semibold uppercase tracking-[0.2em] text-muted-foreground">
           Trusted by
         </h2>
         <div
@@ -150,7 +150,7 @@ function LeftColumn() {
 
       {/* Contact */}
       <div className="mt-auto pt-4">
-        <h2 className="text-[15px] font-medium text-white mb-4 tracking-tight">
+        <h2 className="text-[18px] font-semibold text-white mb-4 tracking-tight">
           Contact
         </h2>
         <div className="flex items-center gap-6">
@@ -161,11 +161,11 @@ function LeftColumn() {
             className="text-muted-foreground hover:text-white transition-colors duration-200"
             aria-label="X (Twitter)"
           >
-            <SiX className="w-4 h-4" />
+            <SiX className="w-5 h-5" />
           </a>
           <a
             href="mailto:miracleeseurhobo@gmail.com"
-            className="text-[15px] text-muted-foreground hover:text-white transition-colors duration-200 tracking-tight"
+            className="text-[15px] font-semibold text-muted-foreground hover:text-white transition-colors duration-200 tracking-tight"
           >
             Email
           </a>

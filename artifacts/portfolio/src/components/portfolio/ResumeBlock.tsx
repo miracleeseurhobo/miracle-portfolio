@@ -6,38 +6,38 @@ export function ResumeBlock() {
   return (
     <section className="space-y-6">
       <div className="flex items-baseline justify-between">
-        <h2 className="text-[15px] font-medium text-white tracking-tight">
+        <h2 className="text-[18px] font-semibold text-white tracking-tight">
           Resume
         </h2>
-        <span className="text-[12px] text-muted-foreground tracking-tight">
+        <span className="text-[12px] font-semibold uppercase tracking-[0.18em] text-muted-foreground">
           PDF
         </span>
       </div>
-      <div className="border border-white/[0.06] p-6 md:p-8 flex flex-col md:flex-row md:items-center md:justify-between gap-5">
-        <div className="space-y-1">
-          <h3 className="text-[17px] md:text-[19px] font-medium text-white tracking-tight">
+      <div className="border border-white/[0.08] p-6 md:p-8 flex flex-col md:flex-row md:items-center md:justify-between gap-5">
+        <div className="space-y-1.5">
+          <h3 className="text-[20px] md:text-[22px] font-bold text-white tracking-[-0.01em]">
             Miracle Eseurhobo — CV
           </h3>
-          <p className="text-[14px] text-muted-foreground tracking-tight">
+          <p className="text-[15px] font-medium text-muted-foreground tracking-tight">
             Full work history, education, and tool stack.
           </p>
         </div>
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-4">
           <a
             href={CV_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-[14px] text-muted-foreground hover:text-white transition-colors tracking-tight border-b border-white/20 hover:border-white pb-0.5"
+            className="inline-flex items-center gap-2 text-[15px] font-semibold text-muted-foreground hover:text-white transition-colors tracking-tight border-b-2 border-white/20 hover:border-white pb-1"
           >
             View
-            <ArrowUpRight className="w-3.5 h-3.5" />
+            <ArrowUpRight className="w-4 h-4" />
           </a>
           <a
             href={CV_URL}
             download
-            className="inline-flex items-center gap-2 text-[14px] text-black bg-white hover:bg-white/90 px-4 py-2 tracking-tight transition-colors"
+            className="inline-flex items-center gap-2 text-[15px] font-bold text-black bg-white hover:bg-white/90 px-5 py-3 tracking-tight transition-colors"
           >
-            <Download className="w-3.5 h-3.5" />
+            <Download className="w-4 h-4" strokeWidth={2.5} />
             Download
           </a>
         </div>

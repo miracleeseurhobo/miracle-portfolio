@@ -215,10 +215,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0.5em 0.9em 0.5em 1.1em;
+    padding: 0.7em 1.15em 0.7em 1.3em;
     font-family: "Inter", "Poppins", "Segoe UI", sans-serif;
-    font-size: 14px;
-    font-weight: 400;
+    font-size: 16px;
+    font-weight: 600;
     color: #fff;
     text-decoration: none;
     background-color: var(--button-color);
@@ -302,8 +302,8 @@
   }
 
   .coffee-button .coffee-svg {
-    width: 18px;
-    height: 18px;
+    width: 22px;
+    height: 22px;
     margin-right: 0.5rem;
     color: #e8e8e8;
     animation: coffee-flicker 2s linear infinite;
