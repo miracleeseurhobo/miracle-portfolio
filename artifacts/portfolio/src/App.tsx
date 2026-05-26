@@ -5,6 +5,9 @@ import { ChevronDown } from "lucide-react";
 import NotFound from "@/pages/not-found";
 import CaseStudyPage from "@/pages/case-study";
 import { PortfolioGrid } from "@/components/portfolio/PortfolioGrid";
+import { LogosStrip } from "@/components/portfolio/LogosStrip";
+import { ExperienceSection } from "@/components/portfolio/ExperienceSection";
+import { ResumeBlock } from "@/components/portfolio/ResumeBlock";
 import type { PortfolioItem } from "@/components/portfolio/types";
 
 const ASSET = (path: string) => `${import.meta.env.BASE_URL}${path}`;
@@ -14,6 +17,13 @@ const p2pTradingVideo = ASSET("media/nike.mp4");
 const bitechVideo = ASSET("media/bitech.mp4");
 
 const queryClient = new QueryClient();
+
+const STATS = [
+  { value: "4+", label: "Years solving design problems" },
+  { value: "25+", label: "Brands supported" },
+  { value: "20+", label: "Projects delivered" },
+  { value: "97%", label: "Client satisfaction rate" },
+];
 
 const PORTFOLIO_ITEMS: PortfolioItem[] = [
   {
@@ -54,75 +64,97 @@ const PORTFOLIO_ITEMS: PortfolioItem[] = [
   { id: 12, title: "New project", type: "image", empty: true },
 ];
 
+function LeftColumn() {
+  return (
+    <div className="w-full md:w-[40%] lg:w-[35%] xl:w-[30%] p-6 md:p-12 lg:p-20 md:h-screen md:sticky md:top-0 md:overflow-y-auto flex flex-col gap-12 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+      {/* Status pill */}
+      <div className="inline-flex items-center gap-2 self-start text-[12px] text-white/70 tracking-tight">
+        <span className="relative flex h-1.5 w-1.5">
+          <span className="absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75 animate-ping" />
+          <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-emerald-400" />
+        </span>
+        Available for product & growth-focused design roles
+      </div>
+
+      {/* Header */}
+      <div>
+        <h1 className="text-[22px] font-medium leading-tight text-white tracking-tight">
+          Miracle Eseurhobo
+        </h1>
+        <p className="text-[15px] text-muted-foreground mt-1 tracking-tight">
+          UX Designer & Framer Developer
+        </p>
+      </div>
+
+      {/* About */}
+      <section className="space-y-3">
+        <h2 className="text-[15px] font-medium text-white tracking-tight">
+          About me.
+        </h2>
+        <p className="text-[15px] text-muted-foreground leading-relaxed tracking-tight">
+          A product and visual designer who's worked on both sides of the
+          brief. Fintech products, entertainment brands, pharma campaigns,
+          SaaS platforms. The range was never accidental. I show up best when
+          the problem is half-defined and the stakes are real.
+        </p>
+      </section>
+
+      {/* Stats */}
+      <section className="space-y-3">
+        <h2 className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground">
+          By the numbers
+        </h2>
+        <dl className="grid grid-cols-2 gap-x-6 gap-y-4 pt-1">
+          {STATS.map((s) => (
+            <div key={s.label} className="space-y-1">
+              <dt className="text-[22px] text-white font-medium tracking-tight tabular-nums">
+                {s.value}
+              </dt>
+              <dd className="text-[13px] text-muted-foreground leading-snug tracking-tight">
+                {s.label}
+              </dd>
+            </div>
+          ))}
+        </dl>
+      </section>
+
+      {/* Contact */}
+      <div className="mt-auto pt-4">
+        <h2 className="text-[15px] font-medium text-white mb-4 tracking-tight">
+          Contact
+        </h2>
+        <div className="flex items-center gap-6">
+          <a
+            href="https://x.com/Rizdsgns"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-muted-foreground hover:text-white transition-colors duration-200"
+            aria-label="X (Twitter)"
+          >
+            <SiX className="w-4 h-4" />
+          </a>
+          <a
+            href="mailto:miracleeseurhobo@gmail.com"
+            className="text-[15px] text-muted-foreground hover:text-white transition-colors duration-200 tracking-tight"
+          >
+            Email
+          </a>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function Home() {
   return (
     <div className="min-h-[100dvh] w-full bg-background text-foreground flex flex-col md:flex-row selection:bg-white selection:text-black">
-      <div className="w-full md:w-[40%] lg:w-[35%] xl:w-[30%] p-6 md:p-12 lg:p-20 md:h-screen md:sticky md:top-0 flex flex-col justify-between">
-        <div className="space-y-12">
-          <div>
-            <h1 className="text-[22px] font-medium leading-tight text-white tracking-tight">
-              Miracle Eseurhobo
-            </h1>
-            <p className="text-[15px] text-muted-foreground mt-1 tracking-tight">
-              UX Designer & Framer Developer
-            </p>
-          </div>
+      <LeftColumn />
 
-          <section className="space-y-3">
-            <h2 className="text-[15px] font-medium text-white tracking-tight">
-              Me in 10 seconds.
-            </h2>
-            <p className="text-[15px] text-muted-foreground leading-relaxed tracking-tight">
-              I'm Miracle Eseurhobo, a UX designer and Framer developer. I help
-              startups launch polished, conversion-ready products in an agile
-              manner.
-            </p>
-          </section>
-
-          <section className="space-y-3">
-            <h2 className="text-[15px] font-medium text-white tracking-tight">
-              What's your background?
-            </h2>
-            <div className="space-y-4">
-              <p className="text-[15px] text-muted-foreground leading-relaxed tracking-tight">
-                I focus on simplifying complex flows, building systems that
-                scale, and designing experiences that turn early users into
-                advocates.
-              </p>
-              <p className="text-[15px] text-muted-foreground leading-relaxed tracking-tight">
-                Currently open to new opportunities. Feel free to reach out if
-                you'd like to collaborate or just say hello.
-              </p>
-            </div>
-          </section>
-        </div>
-
-        <div className="mt-16 md:mt-0">
-          <h2 className="text-[15px] font-medium text-white mb-4 tracking-tight">
-            Contact
-          </h2>
-          <div className="flex items-center gap-6">
-            <a
-              href="https://x.com/Rizdsgns"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-white transition-colors duration-200"
-              aria-label="X (Twitter)"
-            >
-              <SiX className="w-4 h-4" />
-            </a>
-            <a
-              href="mailto:miracleeseurhobo@gmail.com"
-              className="text-[15px] text-muted-foreground hover:text-white transition-colors duration-200 tracking-tight"
-            >
-              Email
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <div className="w-full md:w-[60%] lg:w-[65%] xl:w-[70%] p-6 md:p-12 lg:p-20 md:min-h-screen">
+      <div className="w-full md:w-[60%] lg:w-[65%] xl:w-[70%] p-6 md:p-12 lg:p-20 md:min-h-screen space-y-20 md:space-y-28">
         <PortfolioGrid items={PORTFOLIO_ITEMS} />
+        <LogosStrip />
+        <ExperienceSection />
+        <ResumeBlock />
       </div>
 
       <div className="md:hidden fixed bottom-6 left-1/2 -translate-x-1/2 text-muted-foreground animate-bounce">
