@@ -1,7 +1,7 @@
 import { Switch, Route, Router as WouterRouter } from "wouter";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { SiX } from "react-icons/si";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, Coffee } from "lucide-react";
 import NotFound from "@/pages/not-found";
 import CaseStudyPage from "@/pages/case-study";
 import { PortfolioGrid } from "@/components/portfolio/PortfolioGrid";
@@ -120,6 +120,18 @@ function LeftColumn() {
               </div>
             ))}
           </div>
+        </div>
+
+        <div className="pt-2">
+          <a
+            href="mailto:miracleeseurhobo@gmail.com?subject=Coffee%20chat"
+            className="coffee-button"
+            aria-label="Book a coffee chat"
+          >
+            <span className="dots_border" aria-hidden />
+            <Coffee className="coffee-icon" strokeWidth={1.75} aria-hidden />
+            <span className="text_button">Coffee chat</span>
+          </a>
         </div>
       </section>
 
