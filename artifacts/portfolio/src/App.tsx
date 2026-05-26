@@ -6,7 +6,6 @@ import NotFound from "@/pages/not-found";
 import CaseStudyPage from "@/pages/case-study";
 import { PortfolioGrid } from "@/components/portfolio/PortfolioGrid";
 import type { PortfolioItem } from "@/components/portfolio/types";
-import { Bio } from "@/components/bio/Bio";
 
 const ASSET = (path: string) => `${import.meta.env.BASE_URL}${path}`;
 const chessKidsImg = ASSET("media/chess.jpg");
@@ -94,7 +93,33 @@ function Home() {
             </p>
           </div>
 
-          <Bio />
+          <section className="space-y-3">
+            <h2 className="text-[15px] font-medium text-white tracking-tight">
+              Me in 10 seconds.
+            </h2>
+            <p className="text-[15px] text-muted-foreground leading-relaxed tracking-tight">
+              I'm Miracle Eseurhobo, a UX designer and Framer developer. I help
+              startups launch polished, conversion-ready products in an agile
+              manner.
+            </p>
+          </section>
+
+          <section className="space-y-3">
+            <h2 className="text-[15px] font-medium text-white tracking-tight">
+              What's your background?
+            </h2>
+            <div className="space-y-4">
+              <p className="text-[15px] text-muted-foreground leading-relaxed tracking-tight">
+                I focus on simplifying complex flows, building systems that
+                scale, and designing experiences that turn early users into
+                advocates.
+              </p>
+              <p className="text-[15px] text-muted-foreground leading-relaxed tracking-tight">
+                Currently open to new opportunities. Feel free to reach out if
+                you'd like to collaborate or just say hello.
+              </p>
+            </div>
+          </section>
         </div>
 
         <div className="mt-16 md:mt-0">
