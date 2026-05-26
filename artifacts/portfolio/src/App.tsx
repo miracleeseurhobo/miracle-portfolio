@@ -139,7 +139,7 @@ function LeftColumn() {
         <div className="pt-2">
           <span className="coffee-wrapper">
             <a
-              href="https://calendly.com/"
+              href="https://calendly.com/miracleeseurhobo"
               target="_blank"
               rel="noopener noreferrer"
               className="coffee-button"
