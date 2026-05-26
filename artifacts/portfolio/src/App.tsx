@@ -123,17 +123,28 @@ function LeftColumn() {
         </div>
 
         <div className="pt-2">
-          <a
-            href="mailto:miracleeseurhobo@gmail.com?subject=Coffee%20chat"
-            className="coffee-button"
-            aria-label="Book a coffee chat"
-          >
-            <span className="coffee-label">
-              <Coffee className="coffee-icon" strokeWidth={2} aria-hidden />
-              Coffee chat
-            </span>
-            <span className="animation" aria-hidden />
-          </a>
+          <span className="coffee-wrapper">
+            <a
+              href="mailto:miracleeseurhobo@gmail.com?subject=Coffee%20chat"
+              className="coffee-button"
+              aria-label="Book a coffee chat"
+            >
+              <Coffee className="coffee-svg" strokeWidth={2} aria-hidden />
+              <span className="txt-wrapper">
+                <span className="txt-1" aria-hidden>
+                  {"Coffee chat".split("").map((c, i) => (
+                    <span key={i} className="btn-letter">{c === " " ? "\u00A0" : c}</span>
+                  ))}
+                </span>
+                <span className="txt-2" aria-hidden>
+                  {"Let's brew".split("").map((c, i) => (
+                    <span key={i} className="btn-letter">{c === " " ? "\u00A0" : c}</span>
+                  ))}
+                </span>
+                <span className="sr-only">Coffee chat</span>
+              </span>
+            </a>
+          </span>
         </div>
       </section>
 

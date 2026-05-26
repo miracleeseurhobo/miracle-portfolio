@@ -199,65 +199,253 @@
     .animate-marquee { animation: none; }
   }
 
-  /* Coffee chat button (adapted from Uiverse.io by mi-series) */
+  /* Coffee chat button (adapted from Uiverse.io by dexter-st) */
+  .coffee-wrapper {
+    position: relative;
+    display: inline-block;
+  }
   .coffee-button {
-    outline: 0;
-    display: inline-flex;
+    --border-radius: 24px;
+    --padding: 4px;
+    --transition: 0.4s;
+    --button-color: #101010;
+    --highlight-color-hue: 28deg;
+
+    user-select: none;
+    display: flex;
     align-items: center;
-    justify-content: space-between;
-    gap: 12px;
-    background: #40B3A2;
-    min-width: 200px;
-    border: 0;
-    border-radius: 4px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    box-sizing: border-box;
-    padding: 16px 20px;
+    justify-content: center;
+    padding: 0.5em 0.9em 0.5em 1.1em;
+    font-family: "Inter", "Poppins", "Segoe UI", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
     color: #fff;
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: 1.2px;
-    text-transform: uppercase;
-    overflow: hidden;
-    cursor: pointer;
     text-decoration: none;
+    background-color: var(--button-color);
+    box-shadow:
+      inset 0 1px 1px rgba(255, 255, 255, 0.2),
+      inset 0 2px 2px rgba(255, 255, 255, 0.15),
+      inset 0 4px 4px rgba(255, 255, 255, 0.1),
+      inset 0 8px 8px rgba(255, 255, 255, 0.05),
+      inset 0 16px 16px rgba(255, 255, 255, 0.05),
+      0 -1px 1px rgba(0, 0, 0, 0.02),
+      0 -2px 2px rgba(0, 0, 0, 0.03),
+      0 -4px 4px rgba(0, 0, 0, 0.05),
+      0 -8px 8px rgba(0, 0, 0, 0.06),
+      0 -16px 16px rgba(0, 0, 0, 0.08);
+    border: solid 1px #fff2;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    position: relative;
+    transition:
+      box-shadow var(--transition),
+      border var(--transition),
+      background-color var(--transition);
   }
-  .coffee-button:hover { opacity: 0.95; }
-  .coffee-button .coffee-label {
-    display: inline-flex;
+  .coffee-button::before {
+    content: "";
+    position: absolute;
+    top: calc(0px - var(--padding));
+    left: calc(0px - var(--padding));
+    width: calc(100% + var(--padding) * 2);
+    height: calc(100% + var(--padding) * 2);
+    border-radius: calc(var(--border-radius) + var(--padding));
+    pointer-events: none;
+    background-image: linear-gradient(0deg, #0004, #000a);
+    z-index: -1;
+    transition: box-shadow var(--transition), filter var(--transition);
+    box-shadow:
+      0 -8px 8px -6px #0000 inset,
+      0 -16px 16px -8px #00000000 inset,
+      1px 1px 1px #fff2,
+      2px 2px 2px #fff1,
+      -1px -1px 1px #0002,
+      -2px -2px 2px #0001;
+  }
+  .coffee-button::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    pointer-events: none;
+    background-image: linear-gradient(
+      0deg,
+      #fff,
+      hsl(var(--highlight-color-hue), 100%, 70%),
+      hsla(var(--highlight-color-hue), 100%, 70%, 50%),
+      8%,
+      transparent
+    );
+    background-position: 0 0;
+    opacity: 0;
+    transition: opacity var(--transition), filter var(--transition);
+  }
+
+  .coffee-button .btn-letter {
+    position: relative;
+    display: inline-block;
+    color: #fff5;
+    animation: coffee-letter-anim 2s ease-in-out infinite;
+    transition:
+      color var(--transition),
+      text-shadow var(--transition),
+      opacity var(--transition);
+  }
+  @keyframes coffee-letter-anim {
+    50% {
+      text-shadow: 0 0 3px #fff8;
+      color: #fff;
+    }
+  }
+
+  .coffee-button .coffee-svg {
+    width: 18px;
+    height: 18px;
+    margin-right: 0.5rem;
+    color: #e8e8e8;
+    animation: coffee-flicker 2s linear infinite;
+    animation-delay: 0.5s;
+    filter: drop-shadow(0 0 2px #fff9);
+    transition: color var(--transition), filter var(--transition), opacity var(--transition);
+    flex-shrink: 0;
+  }
+  @keyframes coffee-flicker {
+    50% { opacity: 0.3; }
+  }
+
+  .coffee-button .txt-wrapper {
+    position: relative;
+    display: flex;
     align-items: center;
-    gap: 10px;
+    min-width: 6.4em;
   }
-  .coffee-button .coffee-icon {
-    width: 16px;
-    height: 16px;
-    flex-shrink: 0;
+  .coffee-button .txt-1,
+  .coffee-button .txt-2 {
+    position: absolute;
+    word-spacing: -1em;
   }
-  .coffee-button .animation {
-    width: 6px;
-    height: 6px;
-    border-radius: 100%;
-    background: rgba(255, 255, 255, 0.6);
-    flex-shrink: 0;
-    animation: coffee-ripple 0.6s linear infinite;
+  .coffee-button .txt-1 {
+    animation: coffee-appear-anim 1s ease-in-out forwards;
   }
-  @keyframes coffee-ripple {
-    0% {
-      box-shadow:
-        0 0 0 0 rgba(255, 255, 255, 0.1),
-        0 0 0 10px rgba(255, 255, 255, 0.1),
-        0 0 0 20px rgba(255, 255, 255, 0.1),
-        0 0 0 30px rgba(255, 255, 255, 0.1);
+  .coffee-button .txt-2 { opacity: 0; }
+  @keyframes coffee-appear-anim {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  .coffee-button:focus .txt-1 {
+    animation: coffee-opacity-anim 0.3s ease-in-out forwards;
+    animation-delay: 1s;
+  }
+  .coffee-button:focus .txt-2 {
+    animation: coffee-opacity-anim 0.3s ease-in-out reverse forwards;
+    animation-delay: 1s;
+  }
+  @keyframes coffee-opacity-anim {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+  }
+
+  .coffee-button:focus .btn-letter {
+    animation:
+      coffee-focused-letter-anim 1s ease-in-out forwards,
+      coffee-letter-anim 1.2s ease-in-out infinite;
+    animation-delay: 0s, 1s;
+  }
+  @keyframes coffee-focused-letter-anim {
+    0%, 100% { filter: blur(0); }
+    50% {
+      transform: scale(2);
+      filter: blur(10px) brightness(150%)
+        drop-shadow(-36px 12px 12px hsl(var(--highlight-color-hue), 100%, 70%));
     }
-    100% {
-      box-shadow:
-        0 0 0 10px rgba(255, 255, 255, 0.1),
-        0 0 0 20px rgba(255, 255, 255, 0.1),
-        0 0 0 30px rgba(255, 255, 255, 0.1),
-        0 0 0 40px rgba(255, 255, 255, 0);
-    }
   }
+  .coffee-button:focus .coffee-svg {
+    animation-duration: 1.2s;
+    animation-delay: 0.2s;
+  }
+  .coffee-button:focus::before {
+    box-shadow:
+      0 -8px 12px -6px #fff3 inset,
+      0 -16px 16px -8px hsla(var(--highlight-color-hue), 100%, 70%, 20%) inset,
+      1px 1px 1px #fff3,
+      2px 2px 2px #fff1,
+      -1px -1px 1px #0002,
+      -2px -2px 2px #0001;
+  }
+  .coffee-button:focus::after {
+    opacity: 0.6;
+    mask-image: linear-gradient(0deg, #fff, transparent);
+    -webkit-mask-image: linear-gradient(0deg, #fff, transparent);
+    filter: brightness(100%);
+  }
+
+  .coffee-button .btn-letter:nth-child(1) { animation-delay: 0s; }
+  .coffee-button .btn-letter:nth-child(2) { animation-delay: 0.08s; }
+  .coffee-button .btn-letter:nth-child(3) { animation-delay: 0.16s; }
+  .coffee-button .btn-letter:nth-child(4) { animation-delay: 0.24s; }
+  .coffee-button .btn-letter:nth-child(5) { animation-delay: 0.32s; }
+  .coffee-button .btn-letter:nth-child(6) { animation-delay: 0.4s; }
+  .coffee-button .btn-letter:nth-child(7) { animation-delay: 0.48s; }
+  .coffee-button .btn-letter:nth-child(8) { animation-delay: 0.56s; }
+  .coffee-button .btn-letter:nth-child(9) { animation-delay: 0.64s; }
+  .coffee-button .btn-letter:nth-child(10) { animation-delay: 0.72s; }
+  .coffee-button .btn-letter:nth-child(11) { animation-delay: 0.8s; }
+
+  .coffee-button:active {
+    border: solid 1px hsla(var(--highlight-color-hue), 100%, 80%, 70%);
+    background-color: hsla(var(--highlight-color-hue), 50%, 20%, 0.5);
+  }
+  .coffee-button:active::before {
+    box-shadow:
+      0 -8px 12px -6px #fffa inset,
+      0 -16px 16px -8px hsla(var(--highlight-color-hue), 100%, 70%, 80%) inset,
+      1px 1px 1px #fff4,
+      2px 2px 2px #fff2,
+      -1px -1px 1px #0002,
+      -2px -2px 2px #0001;
+  }
+  .coffee-button:active::after {
+    opacity: 1;
+    mask-image: linear-gradient(0deg, #fff, transparent);
+    -webkit-mask-image: linear-gradient(0deg, #fff, transparent);
+    filter: brightness(200%);
+  }
+  .coffee-button:active .btn-letter {
+    text-shadow: 0 0 1px hsla(var(--highlight-color-hue), 100%, 90%, 90%);
+    animation: none;
+  }
+
+  .coffee-button:hover {
+    border: solid 1px hsla(var(--highlight-color-hue), 100%, 80%, 40%);
+  }
+  .coffee-button:hover::before {
+    box-shadow:
+      0 -8px 8px -6px #fffa inset,
+      0 -16px 16px -8px hsla(var(--highlight-color-hue), 100%, 70%, 30%) inset,
+      1px 1px 1px #fff2,
+      2px 2px 2px #fff1,
+      -1px -1px 1px #0002,
+      -2px -2px 2px #0001;
+  }
+  .coffee-button:hover::after {
+    opacity: 1;
+    mask-image: linear-gradient(0deg, #fff, transparent);
+    -webkit-mask-image: linear-gradient(0deg, #fff, transparent);
+  }
+  .coffee-button:hover .coffee-svg {
+    color: #fff;
+    filter:
+      drop-shadow(0 0 3px hsl(var(--highlight-color-hue), 100%, 70%))
+      drop-shadow(0 -4px 6px #0009);
+    animation: none;
+  }
+
   @media (prefers-reduced-motion: reduce) {
-    .coffee-button .animation { animation: none; }
+    .coffee-button .btn-letter,
+    .coffee-button .coffee-svg,
+    .coffee-button:focus .btn-letter { animation: none !important; }
   }
 }
