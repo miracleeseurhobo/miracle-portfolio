@@ -44,39 +44,14 @@ const PORTFOLIO_ITEMS: PortfolioItem[] = [
     src: bitechVideo,
     category: "Mobile App",
   },
-  { id: 5, title: "Light Mode Designs - Showreel", type: "video" },
-  { id: 6, title: "Light Mode Designs - Showreel", type: "video" },
-  { id: 7, title: "Light Mode Designs - Showreel", type: "video" },
-  {
-    id: 8,
-    title: "Webchat UI",
-    type: "image",
-    src: "https://muratalpay.me/images/Webchat.webp",
-  },
-  {
-    id: 9,
-    title: "App Activity Dark",
-    type: "image",
-    src: "https://muratalpay.me/images/App%20activity%20dark.webp",
-  },
-  {
-    id: 10,
-    title: "App Activity Light",
-    type: "image",
-    src: "https://muratalpay.me/images/App%20activity.webp",
-  },
-  {
-    id: 11,
-    title: "Appearance Settings",
-    type: "image",
-    src: "https://muratalpay.me/images/Appearacne.webp",
-  },
-  {
-    id: 12,
-    title: "Rich Text Editor Dark",
-    type: "image",
-    src: "https://muratalpay.me/images/Bold%20dark.webp",
-  },
+  { id: 5, title: "New project", type: "image", empty: true },
+  { id: 6, title: "New project", type: "image", empty: true },
+  { id: 7, title: "New project", type: "image", empty: true },
+  { id: 8, title: "New project", type: "image", empty: true },
+  { id: 9, title: "New project", type: "image", empty: true },
+  { id: 10, title: "New project", type: "image", empty: true },
+  { id: 11, title: "New project", type: "image", empty: true },
+  { id: 12, title: "New project", type: "image", empty: true },
 ];
 
 function Home() {

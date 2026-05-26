@@ -6,4 +6,5 @@ export type PortfolioItem = {
   category?: string;
   description?: string;
   year?: string;
+  empty?: boolean;
 };

@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Play } from "lucide-react";
+import { ImageIcon, Play } from "lucide-react";
 import type { PortfolioItem } from "./types";
 
 type Props = {
@@ -8,6 +8,32 @@ type Props = {
 };
 
 export function ProjectCard({ item, onOpen }: Props) {
+  if (item.empty) {
+    return (
+      <div
+        className="flex flex-col gap-4 cursor-default select-none"
+        aria-label="Empty project slot"
+      >
+        <div className="relative aspect-video w-full bg-white/[0.015] border border-dashed border-white/10 overflow-hidden flex items-center justify-center">
+          <div className="flex flex-col items-center gap-2 text-white/25">
+            <ImageIcon className="w-6 h-6" strokeWidth={1.25} />
+            <span className="text-[11px] uppercase tracking-[0.18em]">
+              Coming soon
+            </span>
+          </div>
+        </div>
+        <div className="space-y-1">
+          <h3 className="text-[15px] font-medium text-white/30 tracking-tight">
+            Untitled project
+          </h3>
+          <p className="text-[14px] text-white/20 tracking-tight">
+            Placeholder
+          </p>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <button
       type="button"
