@@ -8,7 +8,6 @@ import { PortfolioGrid } from "@/components/portfolio/PortfolioGrid";
 import { LogosStrip } from "@/components/portfolio/LogosStrip";
 import { ExperienceSection } from "@/components/portfolio/ExperienceSection";
 import { ResumeBlock } from "@/components/portfolio/ResumeBlock";
-import { BackgroundField } from "@/components/portfolio/BackgroundField";
 import type { PortfolioItem } from "@/components/portfolio/types";
 
 const ASSET = (path: string) => `${import.meta.env.BASE_URL}${path}`;
@@ -198,23 +197,20 @@ function LeftColumn() {
 
 function Home() {
   return (
-    <>
-      <BackgroundField />
-      <div className="relative z-10 min-h-[100dvh] w-full text-foreground flex flex-col md:flex-row selection:bg-white selection:text-black">
-        <LeftColumn />
+    <div className="min-h-[100dvh] w-full bg-background text-foreground flex flex-col md:flex-row selection:bg-white selection:text-black">
+      <LeftColumn />
 
-        <div className="w-full md:w-[60%] lg:w-[65%] xl:w-[70%] p-6 md:p-12 lg:p-20 md:min-h-screen space-y-20 md:space-y-28">
-          <PortfolioGrid items={PORTFOLIO_ITEMS} />
-          <LogosStrip />
-          <ExperienceSection />
-          <ResumeBlock />
-        </div>
-
-        <div className="md:hidden fixed bottom-6 left-1/2 -translate-x-1/2 text-muted-foreground animate-bounce">
-          <ChevronDown className="w-5 h-5 opacity-50" />
-        </div>
+      <div className="w-full md:w-[60%] lg:w-[65%] xl:w-[70%] p-6 md:p-12 lg:p-20 md:min-h-screen space-y-20 md:space-y-28">
+        <PortfolioGrid items={PORTFOLIO_ITEMS} />
+        <LogosStrip />
+        <ExperienceSection />
+        <ResumeBlock />
       </div>
-    </>
+
+      <div className="md:hidden fixed bottom-6 left-1/2 -translate-x-1/2 text-muted-foreground animate-bounce">
+        <ChevronDown className="w-5 h-5 opacity-50" />
+      </div>
+    </div>
   );
 }
 
