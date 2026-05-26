@@ -98,19 +98,28 @@ function LeftColumn() {
         <h2 className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground">
           Trusted by
         </h2>
-        <div className="grid grid-cols-2 gap-px bg-white/[0.06] border border-white/[0.06]">
-          {TRUSTED_LOGOS.map((l) => (
-            <div
-              key={l.src}
-              className="bg-background h-20 flex items-center justify-center px-4 transition-colors duration-300 hover:bg-white/[0.02]"
-            >
-              <img
-                src={l.src}
-                alt={l.alt}
-                className="max-h-6 w-auto object-contain opacity-50 hover:opacity-90 transition-opacity"
-              />
-            </div>
-          ))}
+        <div
+          className="marquee-mask overflow-hidden group"
+          aria-label="Trusted by"
+        >
+          <div
+            className="flex w-max animate-marquee group-hover:[animation-play-state:paused]"
+            style={{ ["--marquee-duration" as string]: "24s" }}
+          >
+            {[...TRUSTED_LOGOS, ...TRUSTED_LOGOS].map((l, i) => (
+              <div
+                key={i}
+                className="shrink-0 h-16 flex items-center justify-center px-8"
+                aria-hidden={i >= TRUSTED_LOGOS.length}
+              >
+                <img
+                  src={l.src}
+                  alt={l.alt}
+                  className="max-h-5 w-auto object-contain opacity-50 hover:opacity-90 transition-opacity"
+                />
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
