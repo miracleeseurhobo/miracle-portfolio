@@ -74,7 +74,6 @@ function LeftColumn() {
         </span>
         Available for product & growth-focused design roles
       </Reveal>
-
       {/* Header */}
       <div>
         <Reveal variant="blur" duration={900} delay={80}>
@@ -93,12 +92,9 @@ function LeftColumn() {
           </h1>
         </Reveal>
         <Reveal variant="up" delay={260} duration={700}>
-          <p className="apple-intro text-muted-foreground mt-2">
-            UX Designer & Framer Developer
-          </p>
+          <p className="apple-intro text-muted-foreground mt-2">UX Designer & Claude Developer</p>
         </Reveal>
       </div>
-
       {/* About */}
       <Reveal as="section" variant="up" delay={60} className="space-y-3">
         <h2 className="apple-headline-6 text-white">
@@ -111,7 +107,6 @@ function LeftColumn() {
           the problem is half-defined and the stakes are real.
         </p>
       </Reveal>
-
       {/* Trusted by */}
       <Reveal as="section" variant="up" delay={120} className="space-y-4">
         <h2 className="apple-eyebrow text-muted-foreground">
@@ -178,7 +173,6 @@ function LeftColumn() {
           </span>
         </div>
       </Reveal>
-
       {/* Contact */}
       <Reveal as="div" variant="up" delay={80} className="mt-auto pt-4">
         <h2 className="apple-headline-6 text-white mb-4">
