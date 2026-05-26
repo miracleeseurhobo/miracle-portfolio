@@ -125,20 +125,32 @@ function LeftColumn() {
         <div className="pt-2">
           <span className="coffee-wrapper">
             <a
-              href="mailto:miracleeseurhobo@gmail.com?subject=Coffee%20chat"
+              href="https://calendly.com/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="coffee-button"
-              aria-label="Book a coffee chat"
+              aria-label="Book a coffee chat on Calendly"
             >
               <Coffee className="coffee-svg" strokeWidth={2} aria-hidden />
               <span className="txt-wrapper">
                 <span className="txt-1" aria-hidden>
                   {"Coffee chat".split("").map((c, i) => (
-                    <span key={i} className="btn-letter">{c === " " ? "\u00A0" : c}</span>
+                    <span
+                      key={i}
+                      className={`btn-letter${c === " " ? " btn-space" : ""}`}
+                    >
+                      {c === " " ? "\u00A0" : c}
+                    </span>
                   ))}
                 </span>
                 <span className="txt-2" aria-hidden>
                   {"Let's brew".split("").map((c, i) => (
-                    <span key={i} className="btn-letter">{c === " " ? "\u00A0" : c}</span>
+                    <span
+                      key={i}
+                      className={`btn-letter${c === " " ? " btn-space" : ""}`}
+                    >
+                      {c === " " ? "\u00A0" : c}
+                    </span>
                   ))}
                 </span>
                 <span className="sr-only">Coffee chat</span>

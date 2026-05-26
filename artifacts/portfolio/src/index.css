@@ -325,7 +325,10 @@
   .coffee-button .txt-1,
   .coffee-button .txt-2 {
     position: absolute;
-    word-spacing: -1em;
+    white-space: pre;
+  }
+  .coffee-button .btn-letter.btn-space {
+    width: 0.32em;
   }
   .coffee-button .txt-1 {
     animation: coffee-appear-anim 1s ease-in-out forwards;
