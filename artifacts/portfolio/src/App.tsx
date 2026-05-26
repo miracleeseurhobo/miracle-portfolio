@@ -72,7 +72,15 @@ function LeftColumn() {
 
       {/* Header */}
       <div>
-        <h1 className="apple-headline-2 text-white">
+        <h1
+          className="text-white uppercase font-normal leading-[1.05]"
+          style={{
+            fontFamily: "var(--app-font-luxury)",
+            fontSize: "clamp(24px, 2.6vw, 34px)",
+            letterSpacing: "0.08em",
+            fontFeatureSettings: '"kern" 1, "liga" 1',
+          }}
+        >
           Miracle Eseurhobo
         </h1>
         <p className="apple-intro text-muted-foreground mt-2">
