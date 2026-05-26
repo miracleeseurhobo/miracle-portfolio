@@ -1,16 +1,14 @@
 const BRANDS = [
-  "Pepe Jeans",
-  "eva",
-  "Sony",
-  "Vibrant Experiences",
-  "Cadbury",
-  "Warner Music Group",
-  "North Records",
-  "Propaze",
-  "Precize",
-  "Vance",
-  "blink",
-  "The Small Big Idea",
+  "FishyVisions",
+  "Chesslang",
+  "Windu",
+  "Quely",
+  "Afrisplash",
+  "Elverr",
+  "Lavasource",
+  "Seamless",
+  "Bitech",
+  "Luma AI",
 ];
 
 export function LogosStrip() {
