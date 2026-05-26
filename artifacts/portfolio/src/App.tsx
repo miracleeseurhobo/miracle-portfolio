@@ -73,12 +73,14 @@ function LeftColumn() {
       {/* Header */}
       <div>
         <h1
-          className="text-white uppercase font-normal leading-[1.05]"
+          className="text-white uppercase leading-[1.0]"
           style={{
             fontFamily: "var(--app-font-luxury)",
-            fontSize: "clamp(24px, 2.6vw, 34px)",
-            letterSpacing: "0.08em",
-            fontFeatureSettings: '"kern" 1, "liga" 1',
+            fontSize: "clamp(28px, 3vw, 40px)",
+            fontWeight: 800,
+            fontStretch: "115%",
+            letterSpacing: "0.04em",
+            fontFeatureSettings: '"kern" 1, "ss01" 1, "ss02" 1',
           }}
         >
           Miracle Eseurhobo

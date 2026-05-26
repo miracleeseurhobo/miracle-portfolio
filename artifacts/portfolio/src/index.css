@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..700&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..700&family=Mona+Sans:ital,wdth,wght@0,75..125,200..900;1,75..125,200..900&display=swap');
 @import "tailwindcss";
 @import "tw-animate-css";
 @plugin "@tailwindcss/typography";
@@ -139,7 +139,7 @@
      Apple devices; Inter is the cross-platform webfont fallback. */
   --app-font-text: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro', 'Helvetica Neue', 'Inter', system-ui, Roboto, Arial, sans-serif;
   --app-font-display: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro', 'Helvetica Neue', 'Inter', system-ui, Roboto, Arial, sans-serif;
-  --app-font-luxury: 'Bodoni Moda', 'Didot', 'Bodoni 72', 'Playfair Display', Georgia, serif;
+  --app-font-luxury: 'Mona Sans', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Inter, system-ui, sans-serif;
   --app-font-sans: var(--app-font-text);
 
   /* apple.com type ramp — size / line-height / tracking / weight */
