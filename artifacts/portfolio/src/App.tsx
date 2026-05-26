@@ -8,6 +8,7 @@ import { PortfolioGrid } from "@/components/portfolio/PortfolioGrid";
 import { LogosStrip } from "@/components/portfolio/LogosStrip";
 import { ExperienceSection } from "@/components/portfolio/ExperienceSection";
 import { ResumeBlock } from "@/components/portfolio/ResumeBlock";
+import { Reveal } from "@/components/Reveal";
 import type { PortfolioItem } from "@/components/portfolio/types";
 
 const ASSET = (path: string) => `${import.meta.env.BASE_URL}${path}`;
@@ -62,36 +63,44 @@ function LeftColumn() {
   return (
     <div className="w-full md:w-[40%] lg:w-[35%] xl:w-[30%] p-6 md:p-12 lg:p-20 md:h-screen md:sticky md:top-0 md:overflow-y-auto flex flex-col gap-12 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
       {/* Status pill */}
-      <div className="inline-flex items-center gap-2 self-start apple-caption text-white/80">
+      <Reveal
+        variant="fade"
+        duration={500}
+        className="inline-flex items-center gap-2 self-start apple-caption text-white/80"
+      >
         <span className="relative flex h-1.5 w-1.5">
           <span className="absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75 animate-ping" />
           <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-emerald-400" />
         </span>
         Available for product & growth-focused design roles
-      </div>
+      </Reveal>
 
       {/* Header */}
       <div>
-        <h1
-          className="text-white uppercase leading-[1.0]"
-          style={{
-            fontFamily: "var(--app-font-luxury)",
-            fontSize: "clamp(28px, 3vw, 40px)",
-            fontWeight: 800,
-            fontStretch: "115%",
-            letterSpacing: "0.04em",
-            fontFeatureSettings: '"kern" 1, "ss01" 1, "ss02" 1',
-          }}
-        >
-          Miracle Eseurhobo
-        </h1>
-        <p className="apple-intro text-muted-foreground mt-2">
-          UX Designer & Framer Developer
-        </p>
+        <Reveal variant="blur" duration={900} delay={80}>
+          <h1
+            className="text-white uppercase leading-[1.0]"
+            style={{
+              fontFamily: "var(--app-font-luxury)",
+              fontSize: "clamp(28px, 3vw, 40px)",
+              fontWeight: 800,
+              fontStretch: "115%",
+              letterSpacing: "0.04em",
+              fontFeatureSettings: '"kern" 1, "ss01" 1, "ss02" 1',
+            }}
+          >
+            Miracle Eseurhobo
+          </h1>
+        </Reveal>
+        <Reveal variant="up" delay={260} duration={700}>
+          <p className="apple-intro text-muted-foreground mt-2">
+            UX Designer & Framer Developer
+          </p>
+        </Reveal>
       </div>
 
       {/* About */}
-      <section className="space-y-3">
+      <Reveal as="section" variant="up" delay={60} className="space-y-3">
         <h2 className="apple-headline-6 text-white">
           About me.
         </h2>
@@ -101,10 +110,10 @@ function LeftColumn() {
           SaaS platforms. The range was never accidental. I show up best when
           the problem is half-defined and the stakes are real.
         </p>
-      </section>
+      </Reveal>
 
       {/* Trusted by */}
-      <section className="space-y-4">
+      <Reveal as="section" variant="up" delay={120} className="space-y-4">
         <h2 className="apple-eyebrow text-muted-foreground">
           Trusted by
         </h2>
@@ -168,10 +177,10 @@ function LeftColumn() {
             </a>
           </span>
         </div>
-      </section>
+      </Reveal>
 
       {/* Contact */}
-      <div className="mt-auto pt-4">
+      <Reveal as="div" variant="up" delay={80} className="mt-auto pt-4">
         <h2 className="apple-headline-6 text-white mb-4">
           Contact
         </h2>
@@ -192,7 +201,7 @@ function LeftColumn() {
             Email
           </a>
         </div>
-      </div>
+      </Reveal>
     </div>
   );
 }

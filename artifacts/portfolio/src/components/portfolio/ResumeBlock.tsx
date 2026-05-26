@@ -2,18 +2,26 @@ import { Download, ArrowUpRight } from "lucide-react";
 
 const CV_URL = `${import.meta.env.BASE_URL}miracle-eseurhobo-cv.pdf`;
 
+import { Reveal } from "@/components/Reveal";
+
 export function ResumeBlock() {
   return (
     <section className="space-y-6">
-      <div className="flex items-baseline justify-between">
+      <Reveal variant="up" className="flex items-baseline justify-between">
         <h2 className="apple-headline-6 text-white">
           Resume
         </h2>
         <span className="apple-eyebrow text-muted-foreground">
           PDF
         </span>
-      </div>
-      <div className="border border-white/[0.08] p-6 md:p-8 flex flex-col md:flex-row md:items-center md:justify-between gap-5">
+      </Reveal>
+      <Reveal
+        variant="up"
+        distance={36}
+        duration={800}
+        delay={120}
+        className="border border-white/[0.08] p-6 md:p-8 flex flex-col md:flex-row md:items-center md:justify-between gap-5"
+      >
         <div className="space-y-1.5">
           <h3 className="apple-headline-5 text-white">
             Miracle Eseurhobo — CV
@@ -41,7 +49,7 @@ export function ResumeBlock() {
             Download
           </a>
         </div>
-      </div>
+      </Reveal>
     </section>
   );
 }

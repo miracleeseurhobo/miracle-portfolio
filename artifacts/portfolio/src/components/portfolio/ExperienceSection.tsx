@@ -46,22 +46,29 @@ const ROLES: Role[] = [
   },
 ];
 
+import { Reveal } from "@/components/Reveal";
+
 export function ExperienceSection() {
   return (
     <section className="space-y-8">
-      <div className="flex items-baseline justify-between">
+      <Reveal variant="up" className="flex items-baseline justify-between">
         <h2 className="apple-headline-6 text-white">
           Experience
         </h2>
         <span className="apple-caption text-muted-foreground">
           {ROLES.length} roles
         </span>
-      </div>
+      </Reveal>
 
       <ol className="border-t border-white/[0.06]">
-        {ROLES.map((r) => (
-          <li
+        {ROLES.map((r, i) => (
+          <Reveal
+            as="li"
             key={r.title + r.company}
+            variant="up"
+            distance={32}
+            duration={750}
+            delay={i * 90}
             className="border-b border-white/[0.06] py-8 grid md:grid-cols-[180px_1fr] gap-4 md:gap-10"
           >
             <div className="space-y-1">
@@ -99,7 +106,7 @@ export function ExperienceSection() {
                 </p>
               )}
             </div>
-          </li>
+          </Reveal>
         ))}
       </ol>
     </section>
