@@ -18,11 +18,11 @@ const bitechVideo = ASSET("media/bitech.mp4");
 
 const queryClient = new QueryClient();
 
-const STATS = [
-  { value: "4+", label: "Years solving design problems" },
-  { value: "25+", label: "Brands supported" },
-  { value: "20+", label: "Projects delivered" },
-  { value: "97%", label: "Client satisfaction rate" },
+const TRUSTED_LOGOS = [
+  { src: ASSET("logos/logo-1.svg"), alt: "Brand 1" },
+  { src: ASSET("logos/logo-2.svg"), alt: "Brand 2" },
+  { src: ASSET("logos/logo-3.svg"), alt: "Brand 3" },
+  { src: ASSET("logos/logo-4.svg"), alt: "Brand 4" },
 ];
 
 const PORTFOLIO_ITEMS: PortfolioItem[] = [
@@ -56,12 +56,6 @@ const PORTFOLIO_ITEMS: PortfolioItem[] = [
   },
   { id: 5, title: "New project", type: "image", empty: true },
   { id: 6, title: "New project", type: "image", empty: true },
-  { id: 7, title: "New project", type: "image", empty: true },
-  { id: 8, title: "New project", type: "image", empty: true },
-  { id: 9, title: "New project", type: "image", empty: true },
-  { id: 10, title: "New project", type: "image", empty: true },
-  { id: 11, title: "New project", type: "image", empty: true },
-  { id: 12, title: "New project", type: "image", empty: true },
 ];
 
 function LeftColumn() {
@@ -99,23 +93,25 @@ function LeftColumn() {
         </p>
       </section>
 
-      {/* Stats */}
-      <section className="space-y-3">
+      {/* Trusted by */}
+      <section className="space-y-4">
         <h2 className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground">
-          By the numbers
+          Trusted by
         </h2>
-        <dl className="grid grid-cols-2 gap-x-6 gap-y-4 pt-1">
-          {STATS.map((s) => (
-            <div key={s.label} className="space-y-1">
-              <dt className="text-[22px] text-white font-medium tracking-tight tabular-nums">
-                {s.value}
-              </dt>
-              <dd className="text-[13px] text-muted-foreground leading-snug tracking-tight">
-                {s.label}
-              </dd>
+        <div className="grid grid-cols-2 gap-px bg-white/[0.06] border border-white/[0.06]">
+          {TRUSTED_LOGOS.map((l) => (
+            <div
+              key={l.src}
+              className="bg-background h-20 flex items-center justify-center px-4 transition-colors duration-300 hover:bg-white/[0.02]"
+            >
+              <img
+                src={l.src}
+                alt={l.alt}
+                className="max-h-6 w-auto object-contain opacity-50 hover:opacity-90 transition-opacity"
+              />
             </div>
           ))}
-        </dl>
+        </div>
       </section>
 
       {/* Contact */}

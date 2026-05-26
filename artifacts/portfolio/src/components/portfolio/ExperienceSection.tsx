@@ -2,38 +2,46 @@ type Role = {
   title: string;
   company: string;
   period: string;
+  stack?: string;
   bullets: string[];
 };
 
 const ROLES: Role[] = [
   {
-    title: "Product Designer II",
-    company: "Precize",
-    period: "October 2025 — Present",
+    title: "Lead Designer",
+    company: "Quely (Formerly Rally)",
+    period: "April 2023 — Present",
+    stack: "Figma, FigJam, Google Meet, Notion",
     bullets: [
-      "Designed end-to-end product flows for an investment platform — screener, discovery, buying journey, and investor dashboards.",
-      "Simplified complex financial workflows into clear, step-by-step interfaces for first-time buyers in private equity.",
-      "Built and maintained a design system and component library that standardised the product's visual language across surfaces.",
-      "Created internal tools for lead management, improving how the operations team qualifies and tracks investor interest.",
+      "Reduced internal design review meeting time by 35% by shifting feedback and approvals into structured async workflows.",
+      "Improved visibility and traceability of product decisions across design, product, and engineering teams.",
     ],
   },
   {
-    title: "Associate Art Director",
-    company: "The Small Big Idea",
-    period: "March 2022 — September 2025",
+    title: "UX Designer",
+    company: "Rally",
+    period: "April 2023 — Pivot (Quely)",
     bullets: [
-      "Led brand and communication design across entertainment, crypto, insurance, and pharma campaigns, identity systems, and marketing collateral.",
-      "Transitioned into product design mid-tenure, shipping 10+ responsive websites across SaaS, healthcare, D2C, and entertainment.",
-      "Managed a 4-person design team — handling reviews, execution quality, and stakeholder alignment.",
-      "Integrated AI tools into the design workflow, cutting delivery timelines by 30% without compromising output quality.",
+      "Spearheaded user-centered pivot strategy by uncovering unmet needs and validating new concepts, boosting product adoption and engagement with growth-focused designs.",
     ],
   },
   {
-    title: "Designer",
-    company: "Vibrant Experiences",
-    period: "February 2021 — January 2022",
+    title: "Founding Designer — Open Source",
+    company: "AfriSplash",
+    period: "January 2023 — April 2023",
+    stack: "Figma, FigJam, Google Meet, Notion",
     bullets: [
-      "Owned visual design across web, print, and pitch — landing pages, UI screens, and business development decks.",
+      "Collaborated with the design team to build a scalable design system used across squads of 20+ designers, improving design consistency and delivery speed.",
+      "Identified key use cases for the AfriSplash forum ecosystem, designing wireframes and interaction flows that supported community engagement and discussion.",
+    ],
+  },
+  {
+    title: "Founding Designer",
+    company: "elverr",
+    period: "August 2021 — December 2022",
+    bullets: [
+      "Designed the platform from concept to MVP — including product flows and the design system.",
+      "Worked closely with stakeholders to validate ideas and translate user research into product solutions.",
     ],
   },
 ];
@@ -46,7 +54,7 @@ export function ExperienceSection() {
           Experience
         </h2>
         <span className="text-[12px] text-muted-foreground tracking-tight">
-          {ROLES.length} roles · 4+ yrs
+          {ROLES.length} roles
         </span>
       </div>
 
@@ -85,6 +93,11 @@ export function ExperienceSection() {
                   </li>
                 ))}
               </ul>
+              {r.stack && (
+                <p className="text-[12px] text-white/35 tracking-tight pt-1">
+                  Stack: {r.stack}
+                </p>
+              )}
             </div>
           </li>
         ))}
