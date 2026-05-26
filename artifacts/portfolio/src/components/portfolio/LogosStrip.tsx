@@ -4,11 +4,9 @@ const BRANDS = [
   "Windu",
   "Quely",
   "Afrisplash",
-  "Elverr",
   "Lavasource",
   "Seamless",
   "Bitech",
-  "Luma AI",
 ];
 
 export function LogosStrip() {
