@@ -1,60 +1,48 @@
+import { Reveal } from "@/components/Reveal";
+
 type Role = {
-  title: string;
   company: string;
+  title: string;
   period: string;
-  stack?: string;
-  bullets: string[];
+  description: string;
 };
 
 const ROLES: Role[] = [
   {
-    title: "Lead Designer",
+    company: "Lava source",
+    title: "Independent Contractor",
+    period: "2026 → Present",
+    description:
+      "Led UX and visual design for a talent marketplace platform inspired by Toptal and Catalant. Designed premium network graph visualizations to communicate scale, trust, and expert connectivity. Created consultant discovery and card interfaces for company and client-facing experiences, and built cohesive visual systems across marketing pages using Figma and modern SaaS design principles.",
+  },
+  {
     company: "Quely (Formerly Rally)",
-    period: "April 2023 — Present",
-    stack: "Figma, FigJam, Google Meet, Notion",
-    bullets: [
-      "Reduced internal design review meeting time by 35% by shifting feedback and approvals into structured async workflows.",
-      "Improved visibility and traceability of product decisions across design, product, and engineering teams.",
-    ],
+    title: "Lead Designer",
+    period: "Apr 2023 → Present",
+    description:
+      "Reduced internal design review meeting time by 35% by shifting feedback and approvals into structured async workflows. Improved visibility and traceability of product decisions across design, product, and engineering teams.",
   },
   {
-    title: "UX Designer",
     company: "Rally",
-    period: "April 2023 — Pivot (Quely)",
-    bullets: [
+    title: "UX Designer",
+    period: "Apr 2023 → Pivot",
+    description:
       "Spearheaded user-centered pivot strategy by uncovering unmet needs and validating new concepts, boosting product adoption and engagement with growth-focused designs.",
-    ],
   },
   {
-    title: "Founding Designer — Open Source",
     company: "AfriSplash",
-    period: "January 2023 — April 2023",
-    stack: "Figma, FigJam, Google Meet, Notion",
-    bullets: [
-      "Collaborated with the design team to build a scalable design system used across squads of 20+ designers, improving design consistency and delivery speed.",
-      "Identified key use cases for the AfriSplash forum ecosystem, designing wireframes and interaction flows that supported community engagement and discussion.",
-    ],
-  },
-  {
-    title: "Founding Designer",
-    company: "elverr",
-    period: "August 2021 — December 2022",
-    bullets: [
-      "Designed the platform from concept to MVP — including product flows and the design system.",
-      "Worked closely with stakeholders to validate ideas and translate user research into product solutions.",
-    ],
+    title: "Founding Designer — Open Source",
+    period: "Jan 2023 → Apr 2023",
+    description:
+      "Collaborated with the design team to build a scalable design system used across squads of 20+ designers, improving design consistency and delivery speed. Identified key use cases for the forum ecosystem, designing wireframes and interaction flows that supported community engagement and discussion.",
   },
 ];
-
-import { Reveal } from "@/components/Reveal";
 
 export function ExperienceSection() {
   return (
     <section className="space-y-8">
       <Reveal variant="up" className="flex items-baseline justify-between">
-        <h2 className="apple-headline-6 text-white">
-          Experience
-        </h2>
+        <h2 className="apple-headline-6 text-white">Experience</h2>
         <span className="apple-caption text-muted-foreground">
           {ROLES.length} roles
         </span>
@@ -64,47 +52,36 @@ export function ExperienceSection() {
         {ROLES.map((r, i) => (
           <Reveal
             as="li"
-            key={r.title + r.company}
+            key={r.company + r.title}
             variant="up"
-            distance={32}
-            duration={750}
-            delay={i * 90}
-            className="border-b border-white/[0.06] py-8 grid md:grid-cols-[180px_1fr] gap-4 md:gap-10"
+            distance={28}
+            duration={700}
+            delay={i * 80}
+            className="border-b border-white/[0.06] py-6 grid grid-cols-[38px_1fr] gap-3"
           >
-            <div className="space-y-1">
-              <p className="apple-eyebrow text-muted-foreground">
-                {r.period}
-              </p>
-              <p className="apple-caption text-white/70">
-                {r.company}
-              </p>
+            {/* Company initial */}
+            <div className="w-[38px] h-[38px] shrink-0 rounded-[6px] bg-white/[0.05] border border-white/[0.09] flex items-center justify-center mt-0.5">
+              <span className="text-[13px] font-medium text-white/50 leading-none select-none">
+                {r.company.charAt(0).toUpperCase()}
+              </span>
             </div>
-            <div className="space-y-3">
-              <h3 className="apple-headline-5 text-white">
-                {r.title}{" "}
-                <span className="text-muted-foreground font-normal">
-                  · {r.company}
+
+            {/* Content */}
+            <div>
+              <div className="flex items-center justify-between gap-4 mb-0.5">
+                <span className="text-[14px] font-medium text-white leading-snug tracking-[-0.01em]">
+                  {r.company}
                 </span>
-              </h3>
-              <ul className="space-y-2">
-                {r.bullets.map((b, i) => (
-                  <li
-                    key={i}
-                    className="apple-body text-muted-foreground pl-4 relative"
-                  >
-                    <span
-                      className="absolute left-0 top-[0.7em] w-1.5 h-px bg-white/40"
-                      aria-hidden
-                    />
-                    {b}
-                  </li>
-                ))}
-              </ul>
-              {r.stack && (
-                <p className="apple-eyebrow text-white/45 pt-1">
-                  Stack: <span className="apple-caption text-white/55 normal-case">{r.stack}</span>
-                </p>
-              )}
+                <span className="text-[13px] text-muted-foreground leading-snug tracking-[-0.008em] shrink-0">
+                  {r.period}
+                </span>
+              </div>
+              <p className="text-[13px] text-muted-foreground leading-snug tracking-[-0.008em] mb-3">
+                {r.title}
+              </p>
+              <p className="text-[14px] leading-[1.65] text-muted-foreground tracking-[-0.01em]">
+                {r.description}
+              </p>
             </div>
           </Reveal>
         ))}
