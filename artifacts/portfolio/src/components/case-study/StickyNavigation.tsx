@@ -16,7 +16,7 @@ export function StickyNavigation({ sections, activeId, progress, onJump }: Props
   return (
     <aside className="hidden lg:block w-56 shrink-0">
       <div className="sticky top-24">
-        <p className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground mb-6">
+        <p className="apple-eyebrow text-muted-foreground mb-6">
           On this page
         </p>
         <nav aria-label="Case study sections" className="relative">

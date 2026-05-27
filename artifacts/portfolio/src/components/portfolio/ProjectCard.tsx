@@ -17,7 +17,7 @@ export function ProjectCard({ item, onOpen }: Props) {
         <div className="relative aspect-video w-full bg-white/[0.015] border border-dashed border-white/10 overflow-hidden flex items-center justify-center">
           <div className="flex flex-col items-center gap-2 text-white/25">
             <ImageIcon className="w-6 h-6" strokeWidth={1.25} />
-            <span className="text-[11px] uppercase tracking-[0.18em]">
+            <span className="apple-eyebrow">
               Coming soon
             </span>
           </div>

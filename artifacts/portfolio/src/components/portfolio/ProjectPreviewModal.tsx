@@ -250,7 +250,7 @@ export function ProjectPreviewModal({
                 transition={{ duration: 0.4, delay: 0.15, ease: EASE }}
               >
                 <div className="max-w-xl">
-                  <p className="text-[10px] uppercase tracking-[0.2em] text-white/40 mb-1.5">
+                  <p className="apple-eyebrow text-white/40 mb-1.5">
                     {item.category ?? "Product Design"}
                   </p>
                   <h2 className="text-[16px] md:text-[18px] font-medium text-white tracking-tight leading-tight">

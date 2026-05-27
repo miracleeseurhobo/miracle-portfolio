@@ -113,7 +113,7 @@ export function CaseStudyLayout({ caseStudy }: Props) {
             transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
             className="max-w-4xl"
           >
-            <p className="text-[12px] uppercase tracking-[0.2em] text-muted-foreground mb-6">
+            <p className="apple-eyebrow text-muted-foreground mb-8">
               Case study
             </p>
             <h1 className="text-[36px] md:text-[64px] leading-[1.05] tracking-tight text-white font-medium">
@@ -124,7 +124,7 @@ export function CaseStudyLayout({ caseStudy }: Props) {
                 {caseStudy.subtitle}
               </p>
             )}
-            <dl className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-6 text-[13px] tracking-tight">
+            <dl className="mt-14 grid grid-cols-2 md:grid-cols-4 gap-6 text-[13px] tracking-tight">
               {caseStudy.client && (
                 <div>
                   <dt className="text-muted-foreground mb-1">Owner</dt>
@@ -213,7 +213,7 @@ export function CaseStudyLayout({ caseStudy }: Props) {
               transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
               className="mb-16 md:mb-24"
             >
-              <p className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground mb-4">
+              <p className="apple-eyebrow text-muted-foreground mb-5">
                 Behance preview
               </p>
               <div className="relative w-full aspect-[404/316] max-w-2xl bg-[#111] overflow-hidden border border-white/5">
@@ -448,7 +448,7 @@ export function CaseStudyLayout({ caseStudy }: Props) {
           {/* Footer CTA */}
           <div className="mt-24 pt-12 border-t border-white/5 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
             <div>
-              <p className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground mb-3">
+              <p className="apple-eyebrow text-muted-foreground mb-4">
                 End of case study
               </p>
               <h3 className="text-[22px] md:text-[28px] tracking-tight text-white font-medium max-w-xl">

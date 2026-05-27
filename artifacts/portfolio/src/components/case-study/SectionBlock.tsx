@@ -31,9 +31,9 @@ export function SectionBlock({
       transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
       className="scroll-mt-28 py-16 md:py-24 border-t border-white/5 first:border-t-0 first:pt-0"
     >
-      <div className="flex items-start justify-between gap-6 mb-8">
+      <div className="flex items-start justify-between gap-6 mb-10">
         <div>
-          <p className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground mb-3">
+          <p className="apple-eyebrow text-muted-foreground mb-4">
             {eyebrow}
           </p>
           <h2 className="text-[28px] md:text-[36px] leading-[1.1] tracking-tight text-white font-medium max-w-2xl">

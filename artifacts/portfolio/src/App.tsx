@@ -82,9 +82,9 @@ function LeftColumn() {
             style={{
               fontFamily: "var(--app-font-luxury)",
               fontSize: "clamp(28px, 3vw, 40px)",
-              fontWeight: 800,
+              fontWeight: 600,
               fontStretch: "115%",
-              letterSpacing: "0.04em",
+              letterSpacing: "0.015em",
               fontFeatureSettings: '"kern" 1, "ss01" 1, "ss02" 1',
             }}
           >
