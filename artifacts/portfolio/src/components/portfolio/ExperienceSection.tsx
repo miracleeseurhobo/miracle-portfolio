@@ -102,7 +102,7 @@ export function ExperienceSection() {
               <p className="text-[13px] text-muted-foreground leading-snug tracking-[-0.008em] mb-3">
                 {r.title}
               </p>
-              <p className="text-[14px] leading-[1.65] text-muted-foreground tracking-[-0.01em]">
+              <p className="text-[16px] leading-[1.65] text-muted-foreground tracking-[-0.01em]">
                 {r.description}
               </p>
             </div>
