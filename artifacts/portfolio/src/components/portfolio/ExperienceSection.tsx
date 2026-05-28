@@ -39,6 +39,7 @@ const ROLES: Role[] = [
     company: "AfriSplash",
     title: "Founding Designer — Open Source",
     period: "Jan 2023 → Apr 2023",
+    logo: ASSET("logos/icons/afrisplash.svg"),
     description:
       "Collaborated with the design team to build a scalable design system used across squads of 20+ designers, improving design consistency and delivery speed. Identified key use cases for the forum ecosystem, designing wireframes and interaction flows that supported community engagement and discussion.",
   },
