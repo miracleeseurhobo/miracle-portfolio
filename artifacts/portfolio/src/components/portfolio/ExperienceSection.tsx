@@ -92,7 +92,7 @@ export function ExperienceSection() {
             {/* Content */}
             <div>
               <div className="flex items-center justify-between gap-4 mb-0.5">
-                <span className="text-[14px] font-medium text-white leading-snug tracking-[-0.01em]">
+                <span className="text-[15px] font-semibold text-white leading-snug tracking-[-0.012em]">
                   {r.company}
                 </span>
                 <span className="text-[13px] text-muted-foreground leading-snug tracking-[-0.008em] shrink-0">
