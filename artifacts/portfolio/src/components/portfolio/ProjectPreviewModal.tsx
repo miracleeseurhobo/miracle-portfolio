@@ -115,13 +115,13 @@ export function ProjectPreviewModal({
           role="dialog"
           aria-modal="true"
           aria-label={`Project preview: ${item.title}`}
-          className="fixed inset-0 z-[100] flex items-center justify-center"
+          className="fixed inset-0 z-[100] overflow-hidden"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.5, ease: EASE }}
         >
-          {/* Backdrop */}
+          {/* Full-coverage backdrop */}
           <motion.button
             type="button"
             aria-label="Close preview"
@@ -191,59 +191,62 @@ export function ProjectPreviewModal({
             </motion.div>
           </div>
 
-          {/* Stage */}
-          <div className="absolute inset-0 z-10 flex flex-col items-center px-4 md:px-8 pt-20">
-            {/* Shared-layout shell — only animates from the opener card on open/close.
-                Intra-modal nav swaps inner media with a keyed fade, no layoutId churn. */}
-            <motion.div
-              layoutId={openerId != null ? `media-${openerId}` : undefined}
-              transition={SPRING}
-              initial={{ opacity: 0, scale: 0.98 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.98 }}
-              className="relative w-full flex-1 min-h-0 max-w-[1680px] bg-[#0d0d0d] rounded-t-[20px] md:rounded-t-[28px] overflow-hidden shadow-[0_60px_160px_-30px_rgba(0,0,0,0.9),0_0_120px_-30px_rgba(255,255,255,0.1)] ring-1 ring-white/5"
-            >
-              <AnimatePresence mode="wait" initial={false}>
-                <motion.div
-                  key={item.id}
-                  className="absolute inset-0"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 0.35, ease: EASE }}
-                >
-                  {item.type === "mp4" && item.src ? (
-                    <video
-                      key={item.src}
-                      src={item.src}
-                      autoPlay
-                      loop
-                      muted
-                      playsInline
-                      preload="metadata"
-                      className="w-full h-full object-cover"
-                    />
-                  ) : item.type === "image" && item.src ? (
-                    <img
-                      src={item.src}
-                      alt={item.title}
-                      className="w-full h-full object-cover"
-                    />
-                  ) : (
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="w-16 h-16 rounded-full bg-white/[0.06] flex items-center justify-center backdrop-blur-sm border border-white/10">
-                        <Play className="w-6 h-6 text-white ml-1" fill="currentColor" />
-                      </div>
-                    </div>
-                  )}
-                </motion.div>
-              </AnimatePresence>
+          {/* Stage — absolute inset-0 guarantees full coverage */}
+          <div className="absolute inset-0 z-10 flex flex-col px-4 md:px-8 pt-20 pb-8">
+            {/* Inner wrapper fills remaining height and centers the content group */}
+            <div className="flex-1 min-h-0 flex flex-col items-center justify-center gap-5">
 
-              {/* Meta overlay — floats over the bottom of the media */}
+              {/* Media */}
+              <motion.div
+                layoutId={openerId != null ? `media-${openerId}` : undefined}
+                transition={SPRING}
+                initial={{ opacity: 0, scale: 0.98 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.98 }}
+                className="relative w-full max-w-5xl aspect-video bg-[#0d0d0d] rounded-[20px] md:rounded-[28px] overflow-hidden shadow-[0_60px_160px_-30px_rgba(0,0,0,0.9),0_0_120px_-30px_rgba(255,255,255,0.06)] ring-1 ring-white/5"
+              >
+                <AnimatePresence mode="wait" initial={false}>
+                  <motion.div
+                    key={item.id}
+                    className="absolute inset-0"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.35, ease: EASE }}
+                  >
+                    {item.type === "mp4" && item.src ? (
+                      <video
+                        key={item.src}
+                        src={item.src}
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        preload="metadata"
+                        className="w-full h-full object-cover"
+                      />
+                    ) : item.type === "image" && item.src ? (
+                      <img
+                        src={item.src}
+                        alt={item.title}
+                        className="w-full h-full object-cover"
+                      />
+                    ) : (
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <div className="w-16 h-16 rounded-full bg-white/[0.06] flex items-center justify-center backdrop-blur-sm border border-white/10">
+                          <Play className="w-6 h-6 text-white ml-1" fill="currentColor" />
+                        </div>
+                      </div>
+                    )}
+                  </motion.div>
+                </AnimatePresence>
+              </motion.div>
+
+              {/* Meta */}
               <AnimatePresence mode="wait">
                 <motion.div
                   key={item.id + "-meta"}
-                  className="absolute bottom-0 left-0 right-0 px-6 md:px-8 pt-16 pb-6 md:pb-8 flex flex-col md:flex-row md:items-end md:justify-between gap-3 bg-gradient-to-t from-black/70 to-transparent"
+                  className="w-full max-w-5xl flex flex-col md:flex-row md:items-end md:justify-between gap-3"
                   initial={{ opacity: 0, y: 12 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: 8 }}
@@ -269,7 +272,8 @@ export function ProjectPreviewModal({
                   </div>
                 </motion.div>
               </AnimatePresence>
-            </motion.div>
+
+            </div>
           </div>
         </motion.div>
       )}
