@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useRef } from "react";
+import { createPortal } from "react-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import { ArrowLeft, ArrowRight, Play, X } from "lucide-react";
 import type { PortfolioItem } from "./types";
@@ -106,7 +107,7 @@ export function ProjectPreviewModal({
     return undefined;
   }, [isOpen]);
 
-  return (
+  return createPortal(
     <AnimatePresence>
       {isOpen && item && (
         <motion.div
@@ -272,6 +273,7 @@ export function ProjectPreviewModal({
           </div>
         </motion.div>
       )}
-    </AnimatePresence>
+    </AnimatePresence>,
+    document.body,
   );
 }
