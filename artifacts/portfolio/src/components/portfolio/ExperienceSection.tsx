@@ -75,7 +75,7 @@ export function ExperienceSection() {
             className="border-b border-white/[0.06] py-6 grid grid-cols-[40px_1fr] gap-4"
           >
             {/* Company logo or initial */}
-            <div className="w-10 h-10 shrink-0 rounded-lg bg-white/[0.05] border border-white/[0.09] flex items-center justify-center overflow-hidden">
+            <div className="w-10 h-10 shrink-0 rounded-xl bg-background border border-white/[0.09] flex items-center justify-center overflow-hidden">
               {r.logo ? (
                 <img
                   src={r.logo}
