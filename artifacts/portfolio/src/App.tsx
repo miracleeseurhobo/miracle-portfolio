@@ -5,6 +5,8 @@ import { ChevronDown, Coffee } from "lucide-react";
 import NotFound from "@/pages/not-found";
 import CaseStudyPage from "@/pages/case-study";
 import { PortfolioGrid } from "@/components/portfolio/PortfolioGrid";
+import { LiveClock } from "@/components/LiveClock";
+import { PhotoCard } from "@/components/PhotoCard";
 import { LogosStrip } from "@/components/portfolio/LogosStrip";
 import { ExperienceSection } from "@/components/portfolio/ExperienceSection";
 import { ResumeBlock } from "@/components/portfolio/ResumeBlock";
@@ -72,8 +74,13 @@ function LeftColumn() {
           <span className="absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75 animate-ping" />
           <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-emerald-400" />
         </span>
-        Available for product & growth-focused design roles
+        <LiveClock />
       </Reveal>
+      {/* Photo card */}
+      <Reveal variant="fade" duration={600}>
+        <PhotoCard src={ASSET("media/portrait.jpg")} />
+      </Reveal>
+
       {/* Header */}
       <div>
         <Reveal variant="blur" duration={900} delay={80}>
@@ -101,10 +108,11 @@ function LeftColumn() {
           About me.
         </h2>
         <p className="apple-body text-muted-foreground">
-          A product and visual designer who's worked on both sides of the
-          brief. Fintech products, entertainment brands, pharma campaigns,
-          SaaS platforms. The range was never accidental. I show up best when
-          the problem is half-defined and the stakes are real.
+          UX designer and Framer/AI Developer helping startups go from "still
+          figuring it out" to polished, launch-ready products people actually
+          love using. I simplify messy flows, build scalable design systems,
+          and create experiences that turn curious early users into loyal
+          advocates.
         </p>
       </Reveal>
       {/* Trusted by */}
