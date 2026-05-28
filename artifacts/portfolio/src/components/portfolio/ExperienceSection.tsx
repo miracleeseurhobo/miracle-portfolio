@@ -95,7 +95,7 @@ export function ExperienceSection() {
                 <span className="text-[16px] font-semibold text-white leading-snug tracking-[-0.004em]">
                   {r.company}
                 </span>
-                <span className="text-[13px] text-muted-foreground leading-snug tracking-[-0.008em] shrink-0">
+                <span className="text-[16px] text-muted-foreground leading-snug tracking-[-0.008em] shrink-0">
                   {r.period}
                 </span>
               </div>
