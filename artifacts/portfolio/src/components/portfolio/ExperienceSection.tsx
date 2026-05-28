@@ -20,6 +20,13 @@ const ROLES: Role[] = [
       "Led UX and visual design for a talent marketplace platform inspired by Toptal and Catalant. Designed premium network graph visualizations to communicate scale, trust, and expert connectivity. Created consultant discovery and card interfaces for company and client-facing experiences, and built cohesive visual systems across marketing pages using Figma and modern SaaS design principles.",
   },
   {
+    company: "SeamlessWeb",
+    title: "Member of Founding Staff (Design Agency)",
+    period: "Mar 2025 → Present",
+    description:
+      "Working on the new frontier of AI Automated Agencies. Stay tuned.",
+  },
+  {
     company: "Quely (Formerly Rally)",
     title: "Lead Designer",
     period: "Apr 2023 → Present",
