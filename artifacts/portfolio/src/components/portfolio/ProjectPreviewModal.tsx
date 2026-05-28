@@ -192,7 +192,7 @@ export function ProjectPreviewModal({
           </div>
 
           {/* Stage */}
-          <div className="relative z-10 w-full h-full flex flex-col items-center px-4 md:px-8 pt-20">
+          <div className="absolute inset-0 z-10 flex flex-col items-center px-4 md:px-8 pt-20">
             {/* Shared-layout shell — only animates from the opener card on open/close.
                 Intra-modal nav swaps inner media with a keyed fade, no layoutId churn. */}
             <motion.div
