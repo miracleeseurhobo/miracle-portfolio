@@ -56,23 +56,24 @@ export function PhotoCard({ src }: { src: string }) {
   return (
     <div
       className="photo-card-wrap"
-      style={{ width: "110px", position: "relative", flexShrink: 0 }}
+      style={{ width: "100%", position: "relative" }}
       onMouseEnter={handleEnter}
       onMouseLeave={handleLeave}
     >
       {/* Stamp shell */}
       <div
         style={{
-          border: "2.5px solid #1e1e1e",
-          borderRadius: "5px",
-          background: "#0d0d0d",
+          border: "1.5px solid #1e1e1e",
+          borderRadius: "8px",
+          background: "#0a0a0a",
           overflow: "hidden",
+          boxShadow: "0 0 0 1px rgba(255,255,255,0.03), 0 8px 32px rgba(0,0,0,0.6)",
         }}
       >
         {/* Photo area */}
         <div
           className="photo-crt"
-          style={{ width: "100%", height: "140px", overflow: "hidden" }}
+          style={{ width: "100%", height: "320px", overflow: "hidden", position: "relative" }}
         >
           {!imgError ? (
             <img
@@ -84,7 +85,7 @@ export function PhotoCard({ src }: { src: string }) {
                 height: "100%",
                 objectFit: "cover",
                 objectPosition: "top center",
-                filter: "grayscale(100%) contrast(1.1)",
+                filter: "grayscale(100%) contrast(1.15) brightness(0.9)",
                 display: "block",
               }}
             />
@@ -98,31 +99,86 @@ export function PhotoCard({ src }: { src: string }) {
                 flexDirection: "column",
                 alignItems: "center",
                 justifyContent: "center",
-                gap: "4px",
+                gap: "6px",
               }}
             >
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.2)" strokeWidth="1.5">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.15)" strokeWidth="1.5">
                 <circle cx="12" cy="8" r="4" />
                 <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" />
               </svg>
-              <span style={{ fontSize: "6px", color: "#2a2a2a", fontFamily: "monospace", letterSpacing: "0.1em" }}>
+              <span style={{ fontSize: "7px", color: "#252525", fontFamily: "monospace", letterSpacing: "0.12em" }}>
                 ADD PHOTO
               </span>
             </div>
           )}
 
+          {/* Bottom gradient vignette */}
+          <div
+            style={{
+              position: "absolute",
+              bottom: 0,
+              left: 0,
+              right: 0,
+              height: "120px",
+              background: "linear-gradient(to top, rgba(0,0,0,0.55) 0%, transparent 100%)",
+              zIndex: 4,
+              pointerEvents: "none",
+            }}
+          />
+
+          {/* Ghost name — barely legible watermark burned into photo */}
+          <div
+            style={{
+              position: "absolute",
+              bottom: "44px",
+              left: "12px",
+              right: "12px",
+              zIndex: 5,
+              pointerEvents: "none",
+            }}
+          >
+            <div
+              style={{
+                fontFamily: "var(--app-font-luxury)",
+                fontSize: "clamp(17px, 3.5vw, 24px)",
+                fontWeight: 600,
+                fontStretch: "115%",
+                letterSpacing: "0.06em",
+                textTransform: "uppercase",
+                color: "rgba(255,255,255,0.13)",
+                lineHeight: 1.05,
+                mixBlendMode: "screen",
+              }}
+            >
+              Miracle Eseurhobo
+            </div>
+            <div
+              style={{
+                fontFamily: "monospace",
+                fontSize: "8px",
+                letterSpacing: "0.18em",
+                textTransform: "uppercase",
+                color: "rgba(255,255,255,0.08)",
+                marginTop: "4px",
+                mixBlendMode: "screen",
+              }}
+            >
+              UX Designer · AI Dev
+            </div>
+          </div>
+
           {/* Badge */}
           <div
             style={{
               position: "absolute",
-              top: "7px",
-              left: "7px",
+              top: "10px",
+              left: "10px",
               background: "#22c55e",
               color: "#000",
-              fontSize: "7px",
+              fontSize: "8px",
               fontWeight: 700,
-              padding: "2px 5px",
-              borderRadius: "3px",
+              padding: "3px 8px",
+              borderRadius: "4px",
               letterSpacing: "0.04em",
               zIndex: 10,
             }}
@@ -134,12 +190,12 @@ export function PhotoCard({ src }: { src: string }) {
           <div
             style={{
               position: "absolute",
-              bottom: "5px",
-              right: "5px",
-              color: "#22c55e",
-              fontSize: "6px",
+              bottom: "8px",
+              right: "10px",
+              color: "rgba(34,197,94,0.5)",
+              fontSize: "7px",
               fontFamily: "monospace",
-              letterSpacing: "0.1em",
+              letterSpacing: "0.12em",
               zIndex: 10,
             }}
           >
@@ -154,11 +210,11 @@ export function PhotoCard({ src }: { src: string }) {
             style={{
               position: "absolute",
               inset: 0,
-              background: "rgba(0,0,0,0.78)",
+              background: "rgba(0,0,0,0.82)",
               display: "flex",
               flexDirection: "column",
               justifyContent: "flex-end",
-              padding: "6px",
+              padding: "14px",
               opacity: overlayActive ? 1 : 0,
               transition: overlayActive ? "opacity 0.3s" : "opacity 0.15s",
               zIndex: 15,
@@ -172,27 +228,27 @@ export function PhotoCard({ src }: { src: string }) {
                   display: "flex",
                   justifyContent: "space-between",
                   alignItems: "center",
-                  borderBottom: "1px solid rgba(34,197,94,0.15)",
-                  padding: "2px 0",
+                  borderBottom: "1px solid rgba(34,197,94,0.12)",
+                  padding: "5px 0",
                 }}
               >
                 <span
                   style={{
-                    fontSize: "6px",
+                    fontSize: "8px",
                     fontFamily: "monospace",
-                    color: "rgba(34,197,94,0.45)",
-                    letterSpacing: "0.08em",
+                    color: "rgba(34,197,94,0.4)",
+                    letterSpacing: "0.1em",
                   }}
                 >
                   {key}
                 </span>
                 <span
                   style={{
-                    fontSize: "6px",
+                    fontSize: "8px",
                     fontFamily: "monospace",
                     fontWeight: 700,
                     color: "#22c55e",
-                    letterSpacing: "0.06em",
+                    letterSpacing: "0.08em",
                   }}
                 >
                   <ScrambleText text={value} active={overlayActive} />
@@ -205,15 +261,33 @@ export function PhotoCard({ src }: { src: string }) {
         {/* Footer */}
         <div
           style={{
-            padding: "5px 8px 6px",
-            borderTop: "1px solid #1e1e1e",
-            fontSize: "6px",
-            fontFamily: "monospace",
-            color: "#22c55e",
-            letterSpacing: "0.1em",
+            padding: "8px 12px 10px",
+            borderTop: "1px solid #161616",
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
           }}
         >
-          MIRACLE ESEURHOBO · UX DESIGNER
+          <span
+            style={{
+              fontSize: "7px",
+              fontFamily: "monospace",
+              color: "rgba(34,197,94,0.6)",
+              letterSpacing: "0.12em",
+            }}
+          >
+            MIRACLE ESEURHOBO
+          </span>
+          <span
+            style={{
+              fontSize: "7px",
+              fontFamily: "monospace",
+              color: "rgba(34,197,94,0.3)",
+              letterSpacing: "0.08em",
+            }}
+          >
+            UX DESIGNER
+          </span>
         </div>
       </div>
     </div>

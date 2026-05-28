@@ -5,8 +5,6 @@ import { ChevronDown, Coffee } from "lucide-react";
 import NotFound from "@/pages/not-found";
 import CaseStudyPage from "@/pages/case-study";
 import { PortfolioGrid } from "@/components/portfolio/PortfolioGrid";
-import { LiveClock } from "@/components/LiveClock";
-import { PhotoCard } from "@/components/PhotoCard";
 import { LogosStrip } from "@/components/portfolio/LogosStrip";
 import { ExperienceSection } from "@/components/portfolio/ExperienceSection";
 import { ResumeBlock } from "@/components/portfolio/ResumeBlock";
@@ -74,11 +72,7 @@ function LeftColumn() {
           <span className="absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75 animate-ping" />
           <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-emerald-400" />
         </span>
-        <LiveClock />
-      </Reveal>
-      {/* Photo card */}
-      <Reveal variant="fade" duration={600}>
-        <PhotoCard src={ASSET("media/portrait.jpg")} />
+        <span>Available</span>
       </Reveal>
 
       {/* Header */}
@@ -102,19 +96,20 @@ function LeftColumn() {
           <p className="apple-intro text-muted-foreground mt-2">UX Designer & Claude Developer</p>
         </Reveal>
       </div>
+
       {/* About */}
       <Reveal as="section" variant="up" delay={60} className="space-y-3">
         <h2 className="apple-headline-6 text-white">
           About me.
         </h2>
         <p className="apple-body text-muted-foreground">
-          UX designer and Framer/AI Developer helping startups go from "still
-          figuring it out" to polished, launch-ready products people actually
-          love using. I simplify messy flows, build scalable design systems,
-          and create experiences that turn curious early users into loyal
-          advocates.
+          A product and visual designer who's worked on both sides of the
+          brief. Fintech products, entertainment brands, pharma campaigns,
+          SaaS platforms. The range was never accidental. I show up best when
+          the problem is half-defined and the stakes are real.
         </p>
       </Reveal>
+
       {/* Trusted by */}
       <Reveal as="section" variant="up" delay={120} className="space-y-4">
         <h2 className="apple-eyebrow text-muted-foreground">
@@ -161,7 +156,7 @@ function LeftColumn() {
                       key={i}
                       className={`btn-letter${c === " " ? " btn-space" : ""}`}
                     >
-                      {c === " " ? "\u00A0" : c}
+                      {c === " " ? " " : c}
                     </span>
                   ))}
                 </span>
@@ -171,7 +166,7 @@ function LeftColumn() {
                       key={i}
                       className={`btn-letter${c === " " ? " btn-space" : ""}`}
                     >
-                      {c === " " ? "\u00A0" : c}
+                      {c === " " ? " " : c}
                     </span>
                   ))}
                 </span>
@@ -181,6 +176,7 @@ function LeftColumn() {
           </span>
         </div>
       </Reveal>
+
       {/* Contact */}
       <Reveal as="div" variant="up" delay={80} className="mt-auto pt-4">
         <h2 className="apple-headline-6 text-white mb-4">
