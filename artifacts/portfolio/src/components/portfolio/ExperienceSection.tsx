@@ -23,6 +23,7 @@ const ROLES: Role[] = [
     company: "SeamlessWeb",
     title: "Member of Founding Staff (Design Agency)",
     period: "Mar 2025 → Present",
+    logo: ASSET("logos/icons/seamless.svg"),
     description:
       "Working on the new frontier of AI Automated Agencies. Stay tuned.",
   },
