@@ -72,18 +72,18 @@ export function ExperienceSection() {
             distance={28}
             duration={700}
             delay={i * 80}
-            className="border-b border-white/[0.06] py-6 grid grid-cols-[38px_1fr] gap-3"
+            className="border-b border-white/[0.06] py-6 grid grid-cols-[40px_1fr] gap-4"
           >
             {/* Company logo or initial */}
-            <div className="w-[38px] h-[38px] shrink-0 rounded-[6px] bg-white/[0.05] border border-white/[0.09] flex items-center justify-center mt-0.5 overflow-hidden">
+            <div className="w-10 h-10 shrink-0 rounded-lg bg-white/[0.05] border border-white/[0.09] flex items-center justify-center overflow-hidden">
               {r.logo ? (
                 <img
                   src={r.logo}
                   alt={r.company}
-                  className="w-[22px] h-[22px] object-contain opacity-70"
+                  className="w-6 h-6 object-contain opacity-70"
                 />
               ) : (
-                <span className="text-[13px] font-medium text-white/50 leading-none select-none">
+                <span className="text-[14px] font-medium text-white/50 leading-none select-none">
                   {r.company.charAt(0).toUpperCase()}
                 </span>
               )}
@@ -91,7 +91,7 @@ export function ExperienceSection() {
 
             {/* Content */}
             <div>
-              <div className="flex items-center justify-between gap-4 mb-0.5">
+              <div className="flex items-center justify-between gap-4 mb-2">
                 <span className="text-[16px] font-semibold text-white leading-snug tracking-[-0.004em]">
                   {r.company}
                 </span>
@@ -99,7 +99,7 @@ export function ExperienceSection() {
                   {r.period}
                 </span>
               </div>
-              <p className="text-[13px] text-muted-foreground leading-snug tracking-[-0.008em] mb-3">
+              <p className="text-[16px] text-muted-foreground leading-snug tracking-[-0.008em] mb-4">
                 {r.title}
               </p>
               <p className="text-[16px] leading-[1.65] text-muted-foreground tracking-[-0.01em]">
