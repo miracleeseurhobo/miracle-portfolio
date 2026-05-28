@@ -192,7 +192,7 @@ export function ProjectPreviewModal({
           </div>
 
           {/* Stage */}
-          <div className="relative z-10 w-full h-full flex flex-col items-center justify-center px-4 md:px-8 pt-20 pb-8 md:pb-10">
+          <div className="relative z-10 w-full h-full flex flex-col items-center px-4 md:px-8 pt-20 pb-8 md:pb-10">
             {/* Shared-layout shell — only animates from the opener card on open/close.
                 Intra-modal nav swaps inner media with a keyed fade, no layoutId churn. */}
             <motion.div
@@ -201,7 +201,7 @@ export function ProjectPreviewModal({
               initial={{ opacity: 0, scale: 0.98 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.98 }}
-              className="relative w-full max-w-[1680px] aspect-video bg-[#0d0d0d] rounded-[20px] md:rounded-[28px] overflow-hidden shadow-[0_60px_160px_-30px_rgba(0,0,0,0.9),0_0_120px_-30px_rgba(255,255,255,0.1)] ring-1 ring-white/5"
+              className="relative w-full flex-1 min-h-0 max-w-[1680px] bg-[#0d0d0d] rounded-[20px] md:rounded-[28px] overflow-hidden shadow-[0_60px_160px_-30px_rgba(0,0,0,0.9),0_0_120px_-30px_rgba(255,255,255,0.1)] ring-1 ring-white/5"
             >
               <AnimatePresence mode="wait" initial={false}>
                 <motion.div
