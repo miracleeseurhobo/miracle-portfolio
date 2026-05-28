@@ -13,7 +13,7 @@ type Role = {
 const ROLES: Role[] = [
   {
     company: "Lava source",
-    title: "Independent Contractor",
+    title: "Fractional Product Designer",
     period: "2026 → Present",
     logo: ASSET("logos/icons/lavasource.svg"),
     description:
@@ -75,7 +75,7 @@ export function ExperienceSection() {
             className="border-b border-white/[0.06] py-6 grid grid-cols-[40px_1fr] gap-4"
           >
             {/* Company logo or initial */}
-            <div className="w-10 h-10 shrink-0 rounded-[12px] bg-background border border-white/[0.09] flex items-center justify-center overflow-hidden">
+            <div className="w-10 h-10 shrink-0 rounded-[16px] bg-background border border-white/[0.09] flex items-center justify-center overflow-hidden">
               {r.logo ? (
                 <img
                   src={r.logo}
