@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Switch, Route, Router as WouterRouter } from "wouter";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { SiX } from "react-icons/si";
@@ -60,8 +61,21 @@ const PORTFOLIO_ITEMS: PortfolioItem[] = [
 ];
 
 function LeftColumn() {
+  const [portraitVisible, setPortraitVisible] = useState(false);
   return (
-    <div className="w-full md:w-[40%] lg:w-[35%] xl:w-[30%] p-6 md:p-12 lg:p-20 md:h-screen md:sticky md:top-0 md:overflow-y-auto flex flex-col gap-12 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+    <div className="relative w-full md:w-[40%] lg:w-[35%] xl:w-[30%] p-6 md:p-12 lg:p-20 md:h-screen md:sticky md:top-0 md:overflow-y-auto flex flex-col gap-12 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+      {/* Cinematic portrait backdrop — revealed on coffee button hover */}
+      <div
+        className="portrait-wrap"
+        style={{
+          backgroundImage: `url(${ASSET("media/portrait.jpg")})`,
+          opacity: portraitVisible ? 1 : 0,
+          transition: portraitVisible
+            ? "opacity 1.2s ease-out"
+            : "opacity 0.6s ease-in",
+        }}
+        aria-hidden="true"
+      />
       {/* Status pill */}
       <Reveal
         variant="fade"
@@ -140,7 +154,11 @@ function LeftColumn() {
         </div>
 
         <div className="pt-2">
-          <span className="coffee-wrapper">
+          <span
+            className="coffee-wrapper"
+            onMouseEnter={() => setPortraitVisible(true)}
+            onMouseLeave={() => setPortraitVisible(false)}
+          >
             <a
               href="https://calendly.com/miracleeseurhobo"
               target="_blank"
