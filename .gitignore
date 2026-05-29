@@ -48,3 +48,7 @@ Thumbs.db
 # Replit
 .cache/
 .local/
+
+# Claude Code & Superpowers (may contain tokens)
+.claude/settings.local.json
+.superpowers/

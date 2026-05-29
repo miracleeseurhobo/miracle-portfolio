@@ -1,7 +1,6 @@
-import { useState } from "react";
 import { Switch, Route, Router as WouterRouter } from "wouter";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { SiX } from "react-icons/si";
+import { SiX, SiBehance } from "react-icons/si";
 import { ChevronDown, Coffee } from "lucide-react";
 import NotFound from "@/pages/not-found";
 import CaseStudyPage from "@/pages/case-study";
@@ -61,21 +60,8 @@ const PORTFOLIO_ITEMS: PortfolioItem[] = [
 ];
 
 function LeftColumn() {
-  const [portraitVisible, setPortraitVisible] = useState(false);
   return (
-    <div className="relative w-full md:w-[40%] lg:w-[35%] xl:w-[30%] p-6 md:p-12 lg:p-20 md:h-screen md:sticky md:top-0 md:overflow-y-auto flex flex-col gap-12 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-      {/* Cinematic portrait backdrop — revealed on coffee button hover */}
-      <div
-        className="portrait-wrap"
-        style={{
-          backgroundImage: `url(${ASSET("media/portrait.jpg")})`,
-          opacity: portraitVisible ? 1 : 0,
-          transition: portraitVisible
-            ? "opacity 1.2s ease-out"
-            : "opacity 0.6s ease-in",
-        }}
-        aria-hidden="true"
-      />
+    <div className="w-full md:w-[40%] lg:w-[35%] xl:w-[30%] p-6 md:p-12 lg:p-20 md:h-screen md:sticky md:top-0 md:overflow-y-auto flex flex-col gap-12 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
       {/* Status pill */}
       <Reveal
         variant="fade"
@@ -86,7 +72,7 @@ function LeftColumn() {
           <span className="absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75 animate-ping" />
           <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-emerald-400" />
         </span>
-        <span>Available</span>
+        <span>Available for work</span>
       </Reveal>
 
       {/* Header */}
@@ -107,7 +93,7 @@ function LeftColumn() {
           </h1>
         </Reveal>
         <Reveal variant="up" delay={260} duration={700}>
-          <p className="apple-intro text-muted-foreground mt-2">UX Designer & Claude Developer</p>
+          <p className="apple-intro text-muted-foreground mt-2">UX Designer & Developer</p>
         </Reveal>
       </div>
 
@@ -117,10 +103,11 @@ function LeftColumn() {
           About me.
         </h2>
         <p className="apple-body text-muted-foreground">
-          A product and visual designer who's worked on both sides of the
-          brief. Fintech products, entertainment brands, pharma campaigns,
-          SaaS platforms. The range was never accidental. I show up best when
-          the problem is half-defined and the stakes are real.
+          UX designer and developer helping startups go from "still
+          figuring it out" to polished, launch-ready products people actually
+          love using. I simplify messy flows, build scalable design systems,
+          and create experiences that turn curious early users into loyal
+          advocates.
         </p>
       </Reveal>
 
@@ -154,11 +141,7 @@ function LeftColumn() {
         </div>
 
         <div className="pt-2">
-          <span
-            className="coffee-wrapper"
-            onMouseEnter={() => setPortraitVisible(true)}
-            onMouseLeave={() => setPortraitVisible(false)}
-          >
+          <span className="coffee-wrapper">
             <a
               href="https://calendly.com/miracleeseurhobo"
               target="_blank"
@@ -166,7 +149,13 @@ function LeftColumn() {
               className="coffee-button"
               aria-label="Book a coffee chat on Calendly"
             >
-              <Coffee className="coffee-svg" strokeWidth={2} aria-hidden />
+              <div className="cb-points">
+                {Array.from({ length: 10 }).map((_, i) => (
+                  <i key={i} className="cb-point" />
+                ))}
+              </div>
+              <span className="cb-inner">
+              <Coffee className="cb-icon" strokeWidth={2.5} aria-hidden />
               <span className="txt-wrapper">
                 <span className="txt-1" aria-hidden>
                   {"Coffee chat".split("").map((c, i) => (
@@ -190,6 +179,7 @@ function LeftColumn() {
                 </span>
                 <span className="sr-only">Coffee chat</span>
               </span>
+              </span>
             </a>
           </span>
         </div>
@@ -209,6 +199,15 @@ function LeftColumn() {
             aria-label="X (Twitter)"
           >
             <SiX className="w-5 h-5" />
+          </a>
+          <a
+            href="https://www.behance.net/miracleeseurhobo"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-muted-foreground hover:text-white transition-colors duration-200"
+            aria-label="Behance portfolio"
+          >
+            <SiBehance className="w-5 h-5" />
           </a>
           <a
             href="mailto:miracleeseurhobo@gmail.com"

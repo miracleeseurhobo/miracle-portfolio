@@ -1,0 +1,25 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pnpm --filter @workspace/portfolio run dev)",
+      "Bash(echo \"PID: $!\")",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3000)",
+      "Bash(cat /tmp/portfolio-dev.log)",
+      "Read(//private/tmp/**)",
+      "Bash(curl -s http://localhost:3000/)",
+      "Bash(git -C \"/Users/macbook/Desktop/MY PORTFOLIIO/My-Portfolio\" status)",
+      "Bash(git -C \"/Users/macbook/Desktop/MY PORTFOLIIO/My-Portfolio\" remote -v)",
+      "Bash(git -C \"/Users/macbook/Desktop/MY PORTFOLIIO/My-Portfolio\" log --oneline -5)",
+      "Bash(git -C '/Users/macbook/Desktop/MY PORTFOLIIO/My-Portfolio' add artifacts/portfolio/src/index.css artifacts/portfolio/src/App.tsx artifacts/portfolio/src/components/case-study/CaseStudyLayout.tsx artifacts/portfolio/src/components/case-study/SectionBlock.tsx artifacts/portfolio/src/components/case-study/StickyNavigation.tsx artifacts/portfolio/src/components/portfolio/ProjectCard.tsx artifacts/portfolio/src/components/portfolio/ProjectPreviewModal.tsx)",
+      "Bash(git -C '/Users/macbook/Desktop/MY PORTFOLIIO/My-Portfolio' commit -m ' *)",
+      "Bash(git -C \"/Users/macbook/Desktop/MY PORTFOLIIO/My-Portfolio\" push origin main)",
+      "Bash(git -C '/Users/macbook/Desktop/MY PORTFOLIIO/My-Portfolio' add artifacts/portfolio/src/components/portfolio/ExperienceSection.tsx artifacts/portfolio/public/logos/icons/lavasource.svg artifacts/portfolio/public/logos/icons/quely.svg)",
+      "Bash(vercel --version)",
+      "Read(//private/etc/**)",
+      "Bash(python3 -c \"import socket; print\\(socket.getservbyname\\('hbci'\\)\\)\")",
+      "Bash(pnpm typecheck *)",
+      "Bash(open http://localhost:3000)",
+      "Read(//Users/macbook/.claude/plugins/cache/claude-plugins-official/superpowers/5.1.0/skills/brainstorming/**)"
+    ]
+  }
+}

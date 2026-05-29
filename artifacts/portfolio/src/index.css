@@ -238,18 +238,21 @@
     position: relative;
     display: inline-block;
   }
+
+  /* ── Black button — purple glow + sparkles ── */
   .coffee-button {
     --border-radius: 24px;
     --padding: 4px;
     --transition: 0.4s;
     --button-color: #101010;
-    --highlight-color-hue: 28deg;
+    --highlight-color-hue: 280deg;
 
     user-select: none;
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 0.7em 1.15em 0.7em 1.3em;
+    min-height: 48px;
+    padding: 0.75em 1.5em;
     font-family: "Inter", "Poppins", "Segoe UI", sans-serif;
     font-size: 16px;
     font-weight: 600;
@@ -257,16 +260,16 @@
     text-decoration: none;
     background-color: var(--button-color);
     box-shadow:
-      inset 0 1px 1px rgba(255, 255, 255, 0.2),
-      inset 0 2px 2px rgba(255, 255, 255, 0.15),
-      inset 0 4px 4px rgba(255, 255, 255, 0.1),
-      inset 0 8px 8px rgba(255, 255, 255, 0.05),
-      inset 0 16px 16px rgba(255, 255, 255, 0.05),
-      0 -1px 1px rgba(0, 0, 0, 0.02),
-      0 -2px 2px rgba(0, 0, 0, 0.03),
-      0 -4px 4px rgba(0, 0, 0, 0.05),
-      0 -8px 8px rgba(0, 0, 0, 0.06),
-      0 -16px 16px rgba(0, 0, 0, 0.08);
+      inset 0 1px 1px rgba(255,255,255,0.2),
+      inset 0 2px 2px rgba(255,255,255,0.15),
+      inset 0 4px 4px rgba(255,255,255,0.1),
+      inset 0 8px 8px rgba(255,255,255,0.05),
+      inset 0 16px 16px rgba(255,255,255,0.05),
+      0 -1px 1px rgba(0,0,0,0.02),
+      0 -2px 2px rgba(0,0,0,0.03),
+      0 -4px 4px rgba(0,0,0,0.05),
+      0 -8px 8px rgba(0,0,0,0.06),
+      0 -16px 16px rgba(0,0,0,0.08);
     border: solid 1px #fff2;
     border-radius: var(--border-radius);
     cursor: pointer;
@@ -299,10 +302,8 @@
   .coffee-button::after {
     content: "";
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
     border-radius: inherit;
     pointer-events: none;
     background-image: linear-gradient(
@@ -313,41 +314,127 @@
       8%,
       transparent
     );
-    background-position: 0 0;
     opacity: 0;
     transition: opacity var(--transition), filter var(--transition);
+  }
+  .coffee-button:hover {
+    border: solid 1px hsla(var(--highlight-color-hue), 100%, 80%, 40%);
+  }
+  .coffee-button:hover::before {
+    box-shadow:
+      0 -8px 8px -6px #fffa inset,
+      0 -16px 16px -8px hsla(var(--highlight-color-hue), 100%, 70%, 30%) inset,
+      1px 1px 1px #fff2, 2px 2px 2px #fff1,
+      -1px -1px 1px #0002, -2px -2px 2px #0001;
+  }
+  .coffee-button:hover::after {
+    opacity: 1;
+    mask-image: linear-gradient(0deg, #fff, transparent);
+    -webkit-mask-image: linear-gradient(0deg, #fff, transparent);
+  }
+  .coffee-button:active {
+    border: solid 1px hsla(var(--highlight-color-hue), 100%, 80%, 70%);
+    background-color: hsla(var(--highlight-color-hue), 50%, 20%, 0.5);
+  }
+  .coffee-button:active::before {
+    box-shadow:
+      0 -8px 12px -6px #fffa inset,
+      0 -16px 16px -8px hsla(var(--highlight-color-hue), 100%, 70%, 80%) inset,
+      1px 1px 1px #fff4, 2px 2px 2px #fff2,
+      -1px -1px 1px #0002, -2px -2px 2px #0001;
+  }
+  .coffee-button:active::after {
+    opacity: 1;
+    mask-image: linear-gradient(0deg, #fff, transparent);
+    -webkit-mask-image: linear-gradient(0deg, #fff, transparent);
+    filter: brightness(200%);
+  }
+  .coffee-button:active .btn-letter {
+    text-shadow: 0 0 1px hsla(var(--highlight-color-hue), 100%, 90%, 90%);
+    animation: none;
+  }
+  .coffee-button:focus-visible {
+    outline: 2.5px solid hsla(var(--highlight-color-hue), 100%, 80%, 0.9);
+    outline-offset: 4px;
+  }
+
+  /* Floating particles */
+  .cb-points {
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    position: absolute;
+    z-index: 1;
+  }
+  .cb-points .cb-point {
+    bottom: -10px;
+    position: absolute;
+    animation: floating-points infinite ease-in-out;
+    pointer-events: none;
+    width: 2px;
+    height: 2px;
+    background-color: #fff;
+    border-radius: 9999px;
+  }
+  @keyframes floating-points {
+    0%   { transform: translateY(0); }
+    85%  { opacity: 0; }
+    100% { transform: translateY(-55px); opacity: 0; }
+  }
+  .cb-points .cb-point:nth-child(1)  { left: 10%; opacity: 1;   animation-duration: 2.35s; animation-delay: 0.2s; }
+  .cb-points .cb-point:nth-child(2)  { left: 30%; opacity: 0.7; animation-duration: 2.5s;  animation-delay: 0.5s; }
+  .cb-points .cb-point:nth-child(3)  { left: 25%; opacity: 0.8; animation-duration: 2.2s;  animation-delay: 0.1s; }
+  .cb-points .cb-point:nth-child(4)  { left: 44%; opacity: 0.6; animation-duration: 2.05s; }
+  .cb-points .cb-point:nth-child(5)  { left: 50%; opacity: 1;   animation-duration: 1.9s;  }
+  .cb-points .cb-point:nth-child(6)  { left: 75%; opacity: 0.5; animation-duration: 1.5s;  animation-delay: 1.5s; }
+  .cb-points .cb-point:nth-child(7)  { left: 88%; opacity: 0.9; animation-duration: 2.2s;  animation-delay: 0.2s; }
+  .cb-points .cb-point:nth-child(8)  { left: 58%; opacity: 0.8; animation-duration: 2.25s; animation-delay: 0.2s; }
+  .cb-points .cb-point:nth-child(9)  { left: 98%; opacity: 0.6; animation-duration: 2.6s;  animation-delay: 0.1s; }
+  .cb-points .cb-point:nth-child(10) { left: 65%; opacity: 1;   animation-duration: 2.5s;  animation-delay: 0.2s; }
+
+  /* Inner content wrapper */
+  .cb-inner {
+    z-index: 2;
+    gap: 8px;
+    position: relative;
+    color: white;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.2s ease-in-out;
+  }
+
+  /* Coffee icon — dasharray draw on hover */
+  .cb-icon {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    color: #fff;
+    transition: fill 0.1s linear, color 0.2s ease-in-out;
+  }
+  .coffee-button:hover .cb-icon {
+    animation:
+      dasharray 1s linear forwards,
+      filled 0.1s linear forwards 0.95s;
+  }
+  @keyframes dasharray {
+    from { stroke-dasharray: 0 0 0 0; }
+    to   { stroke-dasharray: 68 68 0 0; }
+  }
+  @keyframes filled {
+    to { fill: white; }
   }
 
   .coffee-button .btn-letter {
     position: relative;
     display: inline-block;
-    color: #fff5;
+    color: rgba(255, 255, 255, 0.8);
     animation: coffee-letter-anim 2s ease-in-out infinite;
-    transition:
-      color var(--transition),
-      text-shadow var(--transition),
-      opacity var(--transition);
+    transition: color 0.25s ease, text-shadow 0.25s ease, opacity 0.25s ease;
   }
   @keyframes coffee-letter-anim {
-    50% {
-      text-shadow: 0 0 3px #fff8;
-      color: #fff;
-    }
-  }
-
-  .coffee-button .coffee-svg {
-    width: 22px;
-    height: 22px;
-    margin-right: 0.5rem;
-    color: #e8e8e8;
-    animation: coffee-flicker 2s linear infinite;
-    animation-delay: 0.5s;
-    filter: drop-shadow(0 0 2px #fff9);
-    transition: color var(--transition), filter var(--transition), opacity var(--transition);
-    flex-shrink: 0;
-  }
-  @keyframes coffee-flicker {
-    50% { opacity: 0.3; }
+    50% { text-shadow: 0 0 4px #fff9; color: #fff; }
   }
 
   .coffee-button .txt-wrapper {
@@ -396,27 +483,8 @@
     50% {
       transform: scale(2);
       filter: blur(10px) brightness(150%)
-        drop-shadow(-36px 12px 12px hsl(var(--highlight-color-hue), 100%, 70%));
+        drop-shadow(-36px 12px 12px rgba(223, 113, 255, 0.8));
     }
-  }
-  .coffee-button:focus .coffee-svg {
-    animation-duration: 1.2s;
-    animation-delay: 0.2s;
-  }
-  .coffee-button:focus::before {
-    box-shadow:
-      0 -8px 12px -6px #fff3 inset,
-      0 -16px 16px -8px hsla(var(--highlight-color-hue), 100%, 70%, 20%) inset,
-      1px 1px 1px #fff3,
-      2px 2px 2px #fff1,
-      -1px -1px 1px #0002,
-      -2px -2px 2px #0001;
-  }
-  .coffee-button:focus::after {
-    opacity: 0.6;
-    mask-image: linear-gradient(0deg, #fff, transparent);
-    -webkit-mask-image: linear-gradient(0deg, #fff, transparent);
-    filter: brightness(100%);
   }
 
   .coffee-button .btn-letter:nth-child(1) { animation-delay: 0s; }
@@ -431,59 +499,10 @@
   .coffee-button .btn-letter:nth-child(10) { animation-delay: 0.72s; }
   .coffee-button .btn-letter:nth-child(11) { animation-delay: 0.8s; }
 
-  .coffee-button:active {
-    border: solid 1px hsla(var(--highlight-color-hue), 100%, 80%, 70%);
-    background-color: hsla(var(--highlight-color-hue), 50%, 20%, 0.5);
-  }
-  .coffee-button:active::before {
-    box-shadow:
-      0 -8px 12px -6px #fffa inset,
-      0 -16px 16px -8px hsla(var(--highlight-color-hue), 100%, 70%, 80%) inset,
-      1px 1px 1px #fff4,
-      2px 2px 2px #fff2,
-      -1px -1px 1px #0002,
-      -2px -2px 2px #0001;
-  }
-  .coffee-button:active::after {
-    opacity: 1;
-    mask-image: linear-gradient(0deg, #fff, transparent);
-    -webkit-mask-image: linear-gradient(0deg, #fff, transparent);
-    filter: brightness(200%);
-  }
-  .coffee-button:active .btn-letter {
-    text-shadow: 0 0 1px hsla(var(--highlight-color-hue), 100%, 90%, 90%);
-    animation: none;
-  }
-
-  .coffee-button:hover {
-    border: solid 1px hsla(var(--highlight-color-hue), 100%, 80%, 40%);
-  }
-  .coffee-button:hover::before {
-    box-shadow:
-      0 -8px 8px -6px #fffa inset,
-      0 -16px 16px -8px hsla(var(--highlight-color-hue), 100%, 70%, 30%) inset,
-      1px 1px 1px #fff2,
-      2px 2px 2px #fff1,
-      -1px -1px 1px #0002,
-      -2px -2px 2px #0001;
-  }
-  .coffee-button:hover::after {
-    opacity: 1;
-    mask-image: linear-gradient(0deg, #fff, transparent);
-    -webkit-mask-image: linear-gradient(0deg, #fff, transparent);
-  }
-  .coffee-button:hover .coffee-svg {
-    color: #fff;
-    filter:
-      drop-shadow(0 0 3px hsl(var(--highlight-color-hue), 100%, 70%))
-      drop-shadow(0 -4px 6px #0009);
-    animation: none;
-  }
-
   @media (prefers-reduced-motion: reduce) {
     .coffee-button .btn-letter,
-    .coffee-button .coffee-svg,
-    .coffee-button:focus .btn-letter { animation: none !important; }
+    .coffee-button:focus .btn-letter,
+    .cb-point { animation: none !important; }
   }
 }
 
@@ -526,6 +545,8 @@
 @media (prefers-reduced-motion: reduce) {
   .loader-cube { animation: none; }
 }
+
+
 
 /* ── Cinematic portrait reveal ── */
 .portrait-wrap {
